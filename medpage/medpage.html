@@ -3,346 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CUIDADO - Prescription Medicine</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-        :root {
-            --primary-teal: #009688;
-            --dark-teal: #00796b;
-            --bg-sidebar: #80cbc4; /* Muted teal for sidebar */
-            --bg-main: #e0f2f1; /* Very light teal */
-            --text-dark: #333;
-            --border-color: #4db6ac;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            display: flex;
-            height: 100vh;
-            background-color: var(--bg-main);
-            overflow: hidden;
-        }
-
-        /* --- Sidebar --- */
-        .sidebar {
-            width: 80px;
-            background-color: #9ecbc8; /* Matching the screenshot sidebar color */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 100px;
-            gap: 40px;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.05);
-            z-index: 10;
-        }
-
-        .sidebar i {
-            font-size: 1.8rem;
-            color: #333;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .sidebar i:hover {
-            color: var(--dark-teal);
-        }
-
-        .sidebar .logout {
-            margin-top: auto;
-            margin-bottom: 40px;
-        }
-
-        /* --- Main Content --- */
-        .main-content {
-            flex: 1;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            background: radial-gradient(circle at 10% 20%, rgb(230, 250, 250) 0%, rgb(200, 235, 235) 90%);
-            overflow-y: auto;
-        }
-
-        /* Background Decorative Crosses (The white plus signs) */
-        .bg-decoration {
-            position: absolute;
-            color: white;
-            opacity: 0.6;
-            z-index: 0;
-            font-weight: 900;
-            pointer-events: none;
-        }
-        .cross-1 { top: 50px; right: 150px; font-size: 150px; transform: rotate(10deg); }
-        .cross-2 { top: 250px; right: 50px; font-size: 100px; }
-        .cross-3 { bottom: 100px; right: 100px; font-size: 200px; }
-
-        /* --- Header --- */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            z-index: 2;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .logo i {
-            font-size: 1.4rem; /* Stethoscope size */
-        }
-
-        .search-bar {
-            position: relative;
-            width: 300px;
-        }
-
-        .search-bar input {
-            width: 100%;
-            padding: 10px 40px 10px 20px;
-            border-radius: 25px;
-            border: none;
-            outline: none;
-            background: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .search-bar i {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #666;
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            text-align: center;
-            margin-top: 10px;
-            z-index: 2;
-        }
-
-        .hero-title {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            color: var(--dark-teal);
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-
-        .hero-icon {
-            font-size: 2.5rem;
-            color: #4db6ac; /* Pill icon color */
-            /* Assuming generic pill icon, specific styling might need an image */
-        }
-
-        .hero p {
-            color: #555;
-            margin-top: 5px;
-            font-size: 0.9rem;
-        }
-
-        /* --- Medicine List Table --- */
-        .list-container {
-            padding: 20px 60px;
-            z-index: 2;
-        }
-
-        h2.section-title {
-            color: #004d40;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        .med-table {
-            width: 100%;
-            border: 2px solid var(--border-color);
-            border-collapse: collapse;
-            background-color: rgba(255, 255, 255, 0.4); /* Semi-transparent white */
-        }
-
-        .med-row {
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        .med-row:last-child {
-            border-bottom: none;
-        }
-
-        .med-img-cell {
-            width: 25%;
-            padding: 20px;
-            border-right: 2px solid var(--border-color);
-            text-align: center;
-            vertical-align: middle;
-            background-color: rgba(255,255,255,0.6);
-        }
-
-        .med-img-cell img {
-            max-width: 100%;
-            max-height: 120px;
-            object-fit: contain;
-        }
-
-        .med-info-cell {
-            padding: 20px;
-            vertical-align: top;
-        }
-
-        .med-info-cell h3 {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: #222;
-        }
-
-        .med-info-cell p {
-            font-size: 0.85rem;
-            line-height: 1.5;
-            color: #333;
-        }
-
-        .med-info-cell a {
-            color: #222;
-            text-decoration: underline;
-            font-weight: 500;
-        }
-
-        /* --- Footer Warning --- */
-        .footer-warning {
-            text-align: center;
-            padding: 20px;
-            color: #004d40;
-            font-style: italic;
-            font-size: 0.9rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            z-index: 2;
-            margin-bottom: 20px;
-        }
-        
-        .warning-icon {
-            color: #d32f2f; /* Red warning color */
-            font-size: 1.2rem;
-        }
-
-        /* --- Floating Mic Button --- */
-        .mic-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #4db6ac, #009688);
-            border: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            z-index: 100;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .mic-btn:hover {
-            transform: scale(1.05);
-        }
-
-        /* Custom styling for the Pill Icon in header to match image */
-        .pill-graphic {
-            display: inline-block;
-            transform: rotate(-15deg);
-            margin-right: 10px;
-        }
-
-    </style>
+    <title>CUIDADO • Prescription Medicine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../sidebar/sidebar.css">
+    <link rel="stylesheet" href="medpage.css">
+    <script src="../sidebar/sidebar.js" defer></script>
 </head>
-<body>
+<body class="with-sidebar medpage-page">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-item">
+            <a href="#">
+                <img src="../sidebar/user.png" alt="Profile icon">
+                <span>PROFILE</span>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a href="#">
+                <img src="../sidebar/HOME.png" alt="Homepage icon">
+                <span>HOMEPAGE</span>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a href="#">
+                <img src="../sidebar/dis.png" alt="Disease icon">
+                <span>DISEASE</span>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a href="#">
+                <img src="../sidebar/aboutus.png" alt="About us icon">
+                <span>ABOUT&nbsp;US</span>
+            </a>
+        </div>
+        <div class="sidebar-item logout">
+            <a href="#">
+                <img src="../sidebar/log out.png" alt="Logout icon">
+                <span>LOGOUT</span>
+            </a>
+        </div>
+    </aside>
 
-    <nav class="sidebar">
-        <i class="fas fa-user-circle"></i>
-        <i class="fas fa-virus"></i> <i class="fas fa-info-circle"></i>
-        <i class="fas fa-phone-alt"></i>
-        <i class="fas fa-sign-out-alt logout"></i>
-    </nav>
-
-    <main class="main-content">
-        
-        <div class="bg-decoration cross-1"><i class="fas fa-plus"></i></div>
-        <div class="bg-decoration cross-2"><i class="fas fa-plus"></i></div>
-        <div class="bg-decoration cross-3"><i class="fas fa-plus"></i></div>
-
-        <header>
-            <div class="logo">
-                <i class="fas fa-stethoscope"></i> CUIDADO
+    <div class="content-root">
+        <header class="app-header">
+            <div class="header-left">
+                <img src="../sidebar/logo.png" alt="CUIDADO logo" class="brand-logo">
             </div>
-            <div class="search-bar">
-                <input type="text" placeholder="">
-                <i class="fas fa-search"></i>
+            <div class="header-search">
+                <input type="text" placeholder="Search medicine...">
+                <button aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
             </div>
         </header>
 
-        <section class="hero">
-            <div class="hero-title">
-                <span class="pill-graphic">
-                    <i class="fas fa-capsules" style="color: #26a69a; font-size: 3rem; text-shadow: 2px 2px 0px rgba(0,0,0,0.1);"></i>
-                </span>
-                Prescription Medicine
-            </div>
-            <p>Doctor-approved medications for safe and effective treatment.</p>
-        </section>
+        <div class="content-area">
+            <section class="hero-card">
+                <div class="hero-pill">
+                    <img src="pills.png" alt="Capsule illustration">
+                </div>
+                <div class="hero-copy">
+                    <h1>Prescription Medicine</h1>
+                    <p>Doctor-approved medications for safe and effective treatment.</p>
+                </div>
+            </section>
 
-        <section class="list-container">
-            <h2 class="section-title">Common Prescribed Medicines</h2>
-            
-            <table class="med-table">
-                <tr class="med-row">
-                    <td class="med-img-cell">
-                        <img src="https://via.placeholder.com/150x100?text=Midodrine+Box" alt="Midodrine">
-                    </td>
-                    <td class="med-info-cell">
-                        <h3>Midodrine</h3>
-                        <p>used to treat <a href="#">low blood pressure</a> (<a href="#">hypotension</a>) that causes severe dizziness or a light-headed feeling, like you might pass out. midodrine is for use only when low blood pressure affects daily life. Midodrine may not improve your ability to perform daily activities.</p>
-                    </td>
-                </tr>
+            <section class="medicine-table">
+                <h2>Common Prescribed Medicines</h2>
 
-                <tr class="med-row">
-                    <td class="med-img-cell">
-                        <img src="https://via.placeholder.com/80x120?text=Levophed+Vial" alt="Levophed">
-                    </td>
-                    <td class="med-info-cell">
-                        <h3>Levophed</h3>
-                        <p>Levophed is similar to <a href="#">adrenaline</a>. It is used to treat life-threatening <a href="#">low blood pressure</a> (<a href="#">hypotension</a>) that can occur with certain medical conditions or surgical procedures. This medicine is often used during CPR (cardio-pulmonary resuscitation).</p>
-                    </td>
-                </tr>
+                <div class="table-card">
+                    <div class="table-row">
+                        <div class="row-image">
+                            <img src="midrodine.png" alt="Midodrine package">
+                        </div>
+                        <div class="row-content">
+                            <h3>Midodrine</h3>
+                            <p>used to treat <span class="link">low blood pressure</span> (<span class="link">hypotension</span>) that causes severe dizziness or a light-headed feeling, like you might pass out. midodrine is for use only when low blood pressure affects daily life. Midodrine may not improve your ability to perform daily activities.</p>
+                        </div>
+                    </div>
 
-                <tr class="med-row">
-                    <td class="med-img-cell">
-                        <img src="https://via.placeholder.com/60x120?text=Biorphen+Vial" alt="Biorphen">
-                    </td>
-                    <td class="med-info-cell">
-                        <h3>Biorphen</h3>
-                        <p>Phenylephrine injection is used to treat hypotension (low blood pressure) that may occur during surgery.<br>
-                        This medicine is to be given only by or under the direct supervision of your doctor.</p>
-                    </td>
-                </tr>
-            </table>
+                    <div class="table-row">
+                        <div class="row-image">
+                            <img src="levophed.png" alt="Levophed vial">
+                        </div>
+                        <div class="row-content">
+                            <h3>Levophed</h3>
+                            <p>Levophed is similar to <span class="link">adrenaline</span>. It is used to treat life-threatening <span class="link">low blood pressure</span> (<span class="link">hypotension</span>) that can occur with certain medical conditions or surgical procedures. This medicine is often used during CPR (cardio-pulmonary resuscitation).</p>
+                        </div>
+                    </div>
+
+                    <div class="table-row">
+                        <div class="row-image">
+                            <img src="biorphen.png" alt="Biorphen vial">
+                        </div>
+                        <div class="row-content">
+                            <h3>Biorphen</h3>
+                            <p>Phenylephrine injection is used to treat hypotension (low blood pressure) that may occur during surgery. This medicine is to be given only by or under the direct supervision of your doctor.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer-warning">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <p>Consult your physician before taking any medication.</p>
+            </footer>
+        </div>
+    </div>
+
+    <button class="mic-btn" aria-label="Voice assistant">
+        <i class="fa-solid fa-microphone"></i>
+    </button>
+
+</body>
+</html>
+
