@@ -1,0 +1,310 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-teal: #009688;
+    --dark-teal: #00796b;
+    --sidebar-bg: #9ecbc8; /* Muted teal/sage for sidebar */
+    --bg-main: #e0f2f1; /* Very light teal */
+    --text-dark: #333;
+    --border-color: #4db6ac;
+    --mic-btn-gradient-start: #4db6ac;
+    --mic-btn-gradient-end: #009688;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background-color: var(--bg-main);
+    overflow: hidden; /* Prevents scroll on the body, scroll is on main-content */
+}
+
+/* --- Sidebar Styling --- */
+.sidebar {
+    width: 80px;
+    background-color: var(--sidebar-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    gap: 40px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+    z-index: 10;
+}
+
+.sidebar-icon-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar i {
+    font-size: 1.8rem;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.sidebar i:hover {
+    color: var(--dark-teal);
+}
+
+.sidebar .logout {
+    margin-top: auto;
+    margin-bottom: 40px;
+}
+
+/* --- Main Content Area --- */
+.main-content {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* Specific radial gradient to match the light glow effect */
+    background: radial-gradient(circle at 10% 20%, rgb(230, 250, 250) 0%, rgb(200, 235, 235) 90%);
+    overflow-y: auto; /* Scrollbar appears here if content overflows */
+}
+
+/* Background Decorative Crosses */
+.bg-decoration {
+    position: absolute;
+    color: white;
+    opacity: 0.6;
+    z-index: 0;
+    font-weight: 900;
+    pointer-events: none; /* Allows clicking through them */
+}
+
+.cross-1 { 
+    top: 50px; 
+    right: 150px; 
+    font-size: 150px; 
+    transform: rotate(10deg); 
+}
+
+.cross-2 { 
+    top: 250px; 
+    right: 50px; 
+    font-size: 100px; 
+}
+
+.cross-3 { 
+    bottom: 100px; 
+    right: 100px; 
+    font-size: 200px; 
+}
+
+/* --- Header --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    z-index: 2;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #000;
+}
+
+.logo i {
+    font-size: 1.6rem;
+}
+
+.search-bar {
+    position: relative;
+    width: 300px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px 40px 10px 20px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-size: 0.9rem;
+}
+
+.search-bar .search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    cursor: pointer;
+}
+
+/* --- Hero Section --- */
+.hero {
+    text-align: center;
+    margin-top: 10px;
+    z-index: 2;
+}
+
+.hero-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    color: var(--dark-teal);
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.pill-graphic i {
+    color: #26a69a; 
+    font-size: 3rem; 
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+    transform: rotate(-15deg);
+    display: inline-block;
+}
+
+.hero p {
+    color: #555;
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+/* --- Medicine List Table --- */
+.list-container {
+    padding: 20px 60px;
+    z-index: 2;
+}
+
+h2.section-title {
+    color: #004d40;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.med-table {
+    width: 100%;
+    border: 2px solid var(--border-color);
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.med-row {
+    border-bottom: 2px solid var(--border-color);
+}
+
+.med-row:last-child {
+    border-bottom: none;
+}
+
+.med-img-cell {
+    width: 25%;
+    padding: 20px;
+    border-right: 2px solid var(--border-color);
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgba(255,255,255,0.6);
+}
+
+.med-img-cell img {
+    max-width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+}
+
+.med-info-cell {
+    padding: 20px;
+    vertical-align: top;
+}
+
+.med-info-cell h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.med-info-cell p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.med-info-cell a {
+    color: #222;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+/* --- Footer Warning --- */
+.footer-warning {
+    text-align: center;
+    padding: 20px;
+    color: #004d40;
+    font-style: italic;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    z-index: 2;
+    margin-bottom: 20px;
+}
+
+.warning-icon {
+    color: #d32f2f;
+    font-size: 1.2rem;
+}
+
+/* --- Floating Mic Button --- */
+.mic-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--mic-btn-gradient-start), var(--mic-btn-gradient-end));
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.mic-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .list-container {
+        padding: 20px;
+    }
+    
+    .med-table, .med-row, .med-img-cell, .med-info-cell {
+        display: block;
+        width: 100%;
+        border-right: none;
+    }
+    
+    .med-img-cell {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+}
