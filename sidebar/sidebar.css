@@ -3,7 +3,7 @@
     --sidebar-text: #0f4242;
     --header-bg: #7dbebb;
     --teal: #00a6a6;
-    --sidebar-width: 110px;
+    --sidebar-width: 80px;
 }
 
 * {
@@ -18,6 +18,7 @@ body.with-sidebar {
     min-height: 100vh;
     background: #edf7f7;
     padding-left: var(--sidebar-width);
+    padding-top: 60px;
 }
 
 body.sidebar-demo {
@@ -31,8 +32,8 @@ body.sidebar-demo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px 12px 30px;
-    gap: 30px;
+    padding: 50px 8px 30px;
+    gap: 25px;
     min-height: 100vh;
     position: fixed;
     top: 0;
@@ -60,8 +61,8 @@ body.sidebar-demo {
 }
 
 .sidebar-item img {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     object-fit: contain;
 }
 
@@ -77,19 +78,19 @@ body.with-sidebar .preview-canvas {
 
 body.with-sidebar .app-header {
     background: var(--header-bg);
-    padding: 3px 34px 5px;
-    border-radius: 0 0 22px 22px;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.14);
+    padding: 8px 34px 8px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
-    position: sticky;
+    position: fixed;
     top: 0;
-    left: var(--sidebar-width);
+    left: 0;
     right: 0;
-    width: auto;
-    z-index: 15;
+    width: 100%;
+    z-index: 10;
+    height: auto;
+    min-height: 50px;
 }
 
 .header-left {
@@ -97,48 +98,59 @@ body.with-sidebar .app-header {
     align-items: center;
     gap: 20px;
     text-transform: uppercase;
+    padding-left: calc(var(--sidebar-width) + 20px);
 }
 
 .brand-logo {
-    width: 110px;
-    height: 110px;
+    width: 120px;
+    height: auto;
     object-fit: contain;
+    max-height: 35px;
 }
 
 .header-search {
     position: relative;
-    width: 260px;
+    width: 300px;
 }
 
 .header-search input {
     width: 100%;
-    padding: 9px 45px 9px 20px;
+    padding: 10px 50px 10px 20px;
     border-radius: 999px;
     border: none;
     outline: none;
     font-size: 0.9rem;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.12);
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .header-search button {
     position: absolute;
-    right: 6px;
+    right: 8px;
     top: 50%;
     transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     border: none;
-    background: var(--teal);
-    color: white;
+    background: transparent;
+    color: #333;
     cursor: pointer;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.header-search button i {
+    font-size: 16px;
+    color: #333;
 }
 
 
 @media (max-width: 1200px) {
     :root {
-        --sidebar-width: 80px;
+        --sidebar-width: 70px;
     }
 
     body.with-sidebar {
@@ -146,7 +158,7 @@ body.with-sidebar .app-header {
     }
 
     body.with-sidebar .sidebar {
-        padding: 30px 8px 20px;
+        padding: 45px 6px 20px;
         gap: 20px;
     }
 
@@ -154,15 +166,18 @@ body.with-sidebar .app-header {
         font-size: 0.5rem;
     }
 
-    .brand-logo {
-        width: 90px;
-        height: 90px;
+    .header-left {
+        padding-left: calc(var(--sidebar-width) + 15px);
     }
 
     body.with-sidebar .app-header {
-        left: var(--sidebar-width);
-        right: 0;
-        padding: 3px 28px 5px;
+        padding: 8px 20px 8px 0;
+        min-height: 50px;
+    }
+
+    .brand-logo {
+        max-height: 30px;
+        width: 100px;
     }
 
 }
