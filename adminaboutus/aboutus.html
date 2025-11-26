@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUIDADO • About Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../sidebar/sidebar.css">
+    <link rel="stylesheet" href="aboutus.css">
+    <script src="../sidebar/sidebar.js" defer></script>
+    <script src="aboutus.js" defer></script>
+</head>
+<body class="with-sidebar">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-item">
+            <a href="profile.html">
+                <img src="../sidebar/user.png" alt="Profile icon">
+                <span>PROFILE</span>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a href="homepage.html">
+                <img src="../sidebar/HOME.png" alt="Homepage icon">
+                <span>HOMEPAGE</span>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a href="disease.html">
+                <img src="../sidebar/dis.png" alt="Disease icon">
+                <span>DISEASE</span>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a href="aboutus.html">
+                <img src="../sidebar/aboutus.png" alt="About us icon">
+                <span>ABOUT&nbsp;US</span>
+            </a>
+        </div>
+        <div class="sidebar-item logout">
+            <a href="logout.html">
+                <img src="../sidebar/log out.png" alt="Logout icon">
+                <span>LOGOUT</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="preview-canvas">
+        <header class="app-header">
+            <div class="header-left">
+                <img src="../admin/logo.png" alt="CUIDADO logo" class="brand-logo">
+            </div>
+            <div class="header-search">
+                <input type="text" placeholder="Search keywords...">
+                <button aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <button class="admin-edit-section" data-section="hero" title="Edit Hero Section">
+                <i class="fa-solid fa-pencil"></i> Edit Section
+            </button>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 id="hero-title">WE PROVIDE BEST HEALTHCARE GUIDE</h1>
+                    <p id="hero-description">At Cuidado, we believe that good health starts with the right information. Our innovative voice-activated platform allows you to simply speak your questions, and our intelligent system will guide you to the most relevant medical information and resources.</p>
+                </div>
+            </div>
+            <div class="hero-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
+            <svg class="wave-separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path fill="#ffffff" d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,58.7C960,64,1056,64,1152,58.7C1248,53,1344,43,1392,37.3L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+            </svg>
+        </section>
+
+        <section class="mission-vision-section">
+            <div class="section-container">
+                <button class="admin-edit-section" data-section="mission-vision" title="Edit Mission & Vision">
+                    <i class="fa-solid fa-pencil"></i> Edit Mission & Vision
+                </button>
+                <h2 class="section-title" id="mission-vision-title">MISSION & VISION</h2>
+                <p class="section-description" id="mission-vision-description">Our commitment to providing accessible healthcare information through innovative technology.</p>
+                
+                <div class="mission-vision-grid">
+                    <div class="mission-vision-card">
+                        <div class="mission-vision-icon-circle">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3 id="mission-title">OUR MISSION</h3>
+                        <p id="mission-text">To empower individuals with accurate, reliable medical information through our innovative voice-activated platform, making healthcare knowledge accessible to everyone, anytime, anywhere.</p>
+                    </div>
+                    <div class="mission-vision-card">
+                        <div class="mission-vision-icon-circle">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h3 id="vision-title">OUR VISION</h3>
+                        <p id="vision-text">To become the leading voice-activated healthcare information platform, revolutionizing how people access medical knowledge and reducing risks in self-medication through intelligent, user-friendly technology.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section class="about-section">
+            <div class="section-container">
+                <button class="admin-edit-section" data-section="about" title="Edit About Us">
+                    <i class="fa-solid fa-pencil"></i> Edit About Us
+                </button>
+                <div class="about-content">
+                    <h2 class="section-subtitle about-us-title">ABOUT US</h2>
+                    <div class="about-image">
+                        <img src="../admin/logo.png" alt="CUIDADO logo" class="about-logo">
+                    </div>
+                    <div class="about-text">
+                        <div class="about-details">
+                            <h3 class="story-title">OUR STORY</h3>
+                            <p class="story-text" id="story-text">No more risks in self-medication, Cuidado provides the right information through intelligent voice navigation.</p>
+                            <p class="about-description" id="about-description">At Cuidado, we believe that good health starts with the right information. Our innovative voice-activated platform allows you to simply speak your medical questions, and our intelligent system will instantly guide you to the most relevant pages with accurate medical information, medicine recommendations, and health resources.</p>
+                            <ul class="features-list" id="features-list">
+                                <li><i class="fa-solid fa-check"></i> <span>Speak to our voice assistant and get instant access to relevant medical information</span></li>
+                                <li><i class="fa-solid fa-check"></i> <span>Ask questions naturally and be redirected to pages with accurate medical guidance</span></li>
+                                <li><i class="fa-solid fa-check"></i> <span>Search for medicines and learn their uses through voice or text</span></li>
+                            </ul>
+                            <p class="about-conclusion" id="about-conclusion">With Cuidado's voice navigation, safe health care is always just a word away.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Doctors Section -->
+        <section class="doctors-section">
+            <div class="section-container">
+                <button class="admin-edit-section" data-section="team" title="Edit Our Team">
+                    <i class="fa-solid fa-pencil"></i> Edit Our Team
+                </button>
+                <h2 class="section-title white" id="team-title">OUR TEAM</h2>
+                <p class="section-description white" id="team-description">Meet the dedicated team who built Cuidado, bringing innovative healthcare solutions to life.</p>
+                
+                <div class="doctors-grid">
+                    <div class="doctor-card">
+                        <div class="doctor-image">
+                            <img id="team-member-1-photo" src="" alt="" class="team-member-photo" style="display: none;">
+                            <div class="doctor-placeholder" id="team-member-1-placeholder">
+                                <i class="fa-solid fa-user-doctor"></i>
+                            </div>
+                        </div>
+                        <h3 id="team-member-1-name">Eli Nawa</h3>
+                        <p id="team-member-1-role">Developer</p>
+                    </div>
+                    <div class="doctor-card">
+                        <div class="doctor-image">
+                            <img id="team-member-2-photo" src="" alt="" class="team-member-photo" style="display: none;">
+                            <div class="doctor-placeholder" id="team-member-2-placeholder">
+                                <i class="fa-solid fa-user-doctor"></i>
+                            </div>
+                        </div>
+                        <h3 id="team-member-2-name">Alab View</h3>
+                        <p id="team-member-2-role">Designer</p>
+                    </div>
+                    <div class="doctor-card">
+                        <div class="doctor-image">
+                            <img id="team-member-3-photo" src="" alt="" class="team-member-photo" style="display: none;">
+                            <div class="doctor-placeholder" id="team-member-3-placeholder">
+                                <i class="fa-solid fa-user-doctor"></i>
+                            </div>
+                        </div>
+                        <h3 id="team-member-3-name">Mia Mats</h3>
+                        <p id="team-member-3-role">Project Manager</p>
+                    </div>
+                    <!-- Hidden team members (4-6) -->
+                    <div class="doctor-card" style="display: none;">
+                        <div class="doctor-image">
+                            <img id="team-member-4-photo" src="" alt="" class="team-member-photo" style="display: none;">
+                            <div class="doctor-placeholder" id="team-member-4-placeholder">
+                                <i class="fa-solid fa-user-doctor"></i>
+                            </div>
+                        </div>
+                        <h3 id="team-member-4-name">John Doe</h3>
+                        <p id="team-member-4-role">Developer</p>
+                    </div>
+                    <div class="doctor-card" style="display: none;">
+                        <div class="doctor-image">
+                            <img id="team-member-5-photo" src="" alt="" class="team-member-photo" style="display: none;">
+                            <div class="doctor-placeholder" id="team-member-5-placeholder">
+                                <i class="fa-solid fa-user-doctor"></i>
+                            </div>
+                        </div>
+                        <h3 id="team-member-5-name">Jane Smith</h3>
+                        <p id="team-member-5-role">Designer</p>
+                    </div>
+                    <div class="doctor-card" style="display: none;">
+                        <div class="doctor-image">
+                            <img id="team-member-6-photo" src="" alt="" class="team-member-photo" style="display: none;">
+                            <div class="doctor-placeholder" id="team-member-6-placeholder">
+                                <i class="fa-solid fa-user-doctor"></i>
+                            </div>
+                        </div>
+                        <h3 id="team-member-6-name">Bob Wilson</h3>
+                        <p id="team-member-6-role">Developer</p>
+                    </div>
+                </div>
+                <button class="view-all-btn">View All</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Hero Section -->
+    <div id="hero-modal" class="edit-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Hero Section</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Hero Title</label>
+                    <input type="text" id="modal-hero-title" value="WE PROVIDE BEST HEALTHCARE GUIDE">
+                </div>
+                <div class="form-group">
+                    <label>Hero Description</label>
+                    <textarea id="modal-hero-description" rows="4">At Cuidado, we believe that good health starts with the right information. Our innovative voice-activated platform allows you to simply speak your questions, and our intelligent system will guide you to the most relevant medical information and resources.</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Hero Photo</label>
+                    <input type="file" id="modal-hero-photo" accept="image/*">
+                    <small>Current: images/Medical_Team_Photography.png</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="save-btn-modal">Save Changes</button>
+                <button class="cancel-btn-modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Mission & Vision Section -->
+    <div id="mission-vision-modal" class="edit-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Mission & Vision</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Section Title</label>
+                    <input type="text" id="modal-mv-title" value="MISSION & VISION">
+                </div>
+                <div class="form-group">
+                    <label>Section Description</label>
+                    <textarea id="modal-mv-description" rows="2">Our commitment to providing accessible healthcare information through innovative technology.</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Mission Title</label>
+                    <input type="text" id="modal-mission-title" value="OUR MISSION">
+                </div>
+                <div class="form-group">
+                    <label>Mission Text</label>
+                    <textarea id="modal-mission-text" rows="3">To empower individuals with accurate, reliable medical information through our innovative voice-activated platform, making healthcare knowledge accessible to everyone, anytime, anywhere.</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Vision Title</label>
+                    <input type="text" id="modal-vision-title" value="OUR VISION">
+                </div>
+                <div class="form-group">
+                    <label>Vision Text</label>
+                    <textarea id="modal-vision-text" rows="3">To become the leading voice-activated healthcare information platform, revolutionizing how people access medical knowledge and reducing risks in self-medication through intelligent, user-friendly technology.</textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="save-btn-modal">Save Changes</button>
+                <button class="cancel-btn-modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for About Us Section -->
+    <div id="about-modal" class="edit-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit About Us</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Story Text</label>
+                    <textarea id="modal-story-text" rows="2">No more risks in self-medication, Cuidado provides the right information through intelligent voice navigation.</textarea>
+                </div>
+                <div class="form-group">
+                    <label>About Description</label>
+                    <textarea id="modal-about-description" rows="4">At Cuidado, we believe that good health starts with the right information. Our innovative voice-activated platform allows you to simply speak your medical questions, and our intelligent system will instantly guide you to the most relevant pages with accurate medical information, medicine recommendations, and health resources.</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Feature 1</label>
+                    <input type="text" id="modal-feature-1" value="Speak to our voice assistant and get instant access to relevant medical information">
+                </div>
+                <div class="form-group">
+                    <label>Feature 2</label>
+                    <input type="text" id="modal-feature-2" value="Ask questions naturally and be redirected to pages with accurate medical guidance">
+                </div>
+                <div class="form-group">
+                    <label>Feature 3</label>
+                    <input type="text" id="modal-feature-3" value="Search for medicines and learn their uses through voice or text">
+                </div>
+                <div class="form-group">
+                    <label>Conclusion</label>
+                    <textarea id="modal-about-conclusion" rows="2">With Cuidado's voice navigation, safe health care is always just a word away.</textarea>
+                </div>
+                <div class="form-group">
+                    <label>About Us Photo</label>
+                    <input type="file" id="modal-about-photo" accept="image/*">
+                    <small>Upload a new photo for the About Us section</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="save-btn-modal">Save Changes</button>
+                <button class="cancel-btn-modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Our Team Section -->
+    <div id="team-modal" class="edit-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Our Team</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Section Title</label>
+                    <input type="text" id="modal-team-title" value="OUR TEAM">
+                </div>
+                <div class="form-group">
+                    <label>Section Description</label>
+                    <textarea id="modal-team-description" rows="2">Meet the dedicated team who built Cuidado, bringing innovative healthcare solutions to life.</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Team Member 1 Name</label>
+                    <input type="text" id="modal-team-member-1-name" value="Eli Nawa">
+                </div>
+                <div class="form-group">
+                    <label>Team Member 1 Role</label>
+                    <input type="text" id="modal-team-member-1-role" value="Developer">
+                </div>
+                <div class="form-group">
+                    <label>Team Member 1 Photo</label>
+                    <input type="file" id="modal-team-member-1-photo" accept="image/*">
+                    <small>Upload a photo for team member 1</small>
+                </div>
+                <div class="form-group">
+                    <label>Team Member 2 Name</label>
+                    <input type="text" id="modal-team-member-2-name" value="Alab View">
+                </div>
+                <div class="form-group">
+                    <label>Team Member 2 Role</label>
+                    <input type="text" id="modal-team-member-2-role" value="Designer">
+                </div>
+                <div class="form-group">
+                    <label>Team Member 2 Photo</label>
+                    <input type="file" id="modal-team-member-2-photo" accept="image/*">
+                    <small>Upload a photo for team member 2</small>
+                </div>
+                <div class="form-group">
+                    <label>Team Member 3 Name</label>
+                    <input type="text" id="modal-team-member-3-name" value="Mia Mats">
+                </div>
+                <div class="form-group">
+                    <label>Team Member 3 Role</label>
+                    <input type="text" id="modal-team-member-3-role" value="Project Manager">
+                </div>
+                <div class="form-group">
+                    <label>Team Member 3 Photo</label>
+                    <input type="file" id="modal-team-member-3-photo" accept="image/*">
+                    <small>Upload a photo for team member 3</small>
+                </div>
+                <div class="form-group">
+                    <label>Team Member 4 Name</label>
+                    <input type="text" id="modal-team-member-4-name" value="John Doe">
+                </div>
+                <div class="form-group">
+                    <label>Team Member 4 Role</label>
+                    <input type="text" id="modal-team-member-4-role" value="Developer">
+                </div>
+                <div class="form-group">
+                    <label>Team Member 4 Photo</label>
+                    <input type="file" id="modal-team-member-4-photo" accept="image/*">
+                    <small>Upload a photo for team member 4</small>
+                </div>
+                <div class="form-group">
+                    <label>Team Member 5 Name</label>
+                    <input type="text" id="modal-team-member-5-name" value="Jane Smith">
+                </div>
+                <div class="form-group">
+                    <label>Team Member 5 Role</label>
+                    <input type="text" id="modal-team-member-5-role" value="Designer">
+                </div>
+                <div class="form-group">
+                    <label>Team Member 5 Photo</label>
+                    <input type="file" id="modal-team-member-5-photo" accept="image/*">
+                    <small>Upload a photo for team member 5</small>
+                </div>
+                <div class="form-group">
+                    <label>Team Member 6 Name</label>
+                    <input type="text" id="modal-team-member-6-name" value="Bob Wilson">
+                </div>
+                <div class="form-group">
+                    <label>Team Member 6 Role</label>
+                    <input type="text" id="modal-team-member-6-role" value="Developer">
+                </div>
+                <div class="form-group">
+                    <label>Team Member 6 Photo</label>
+                    <input type="file" id="modal-team-member-6-photo" accept="image/*">
+                    <small>Upload a photo for team member 6</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="save-btn-modal">Save Changes</button>
+                <button class="cancel-btn-modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
