@@ -26,22 +26,16 @@ body.medpage-page {
     background: #edf7f7 url('bg.png') center/cover no-repeat fixed;
 }
 
-body.with-sidebar .content-root {
-    flex: 1;
-    position: relative;
-    padding: 0;
-    min-height: 100vh;
-}
-
-
-body.with-sidebar .content-area {
-    margin-top: 125px;
+.content-area {
+    margin-top: 30px;
     border-radius: 26px;
     padding: 50px 40px 40px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.06);
     position: relative;
     overflow: hidden;
-   
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
 }
 
 
@@ -160,50 +154,33 @@ body.with-sidebar .content-area {
     color: var(--warning);
 }
 
-.mic-btn {
-    position: fixed;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
+.edit-btn {
+    align-self: flex-end;
+    padding: 10px 30px;
+    border-radius: 999px;
     border: none;
-    right: 40px;
-    bottom: 35px;
-    background: radial-gradient(circle at 30% 30%, #8df0e4, #05a9a9);
-    color: #fff;
-    font-size: 2rem;
-    box-shadow: 0 18px 30px rgba(0,0,0,0.2);
+    background: #1b7573;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.mic-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 25px 35px rgba(0,0,0,0.25);
+.edit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.22);
+    background: #155e5c;
 }
 
 @media (max-width: 1200px) {
-    body.with-sidebar {
-        padding-left: 80px;
-    }
-
-    body.with-sidebar .sidebar {
-        width: 80px;
-        padding: 30px 8px 20px;
-    }
-
-    .app-header {
-        left: 80px;
-        right: 8px;
-        padding: 8px 24px 12px;
-        border-radius: 0 0 24px 24px;
-    }
-
-    body.with-sidebar .content-root {
-        padding: 0 15px 30px;
-    }
-
-    body.with-sidebar .content-area {
-        margin-top: 120px;
+    .content-area {
+        margin-top: 30px;
         padding: 40px 30px;
     }
 
@@ -224,25 +201,15 @@ body.with-sidebar .content-area {
         text-align: center;
     }
 
-    .header-search,
-    .header-left {
-        width: 100%;
+    .content-area {
+        margin-top: 30px;
+        padding: 30px 20px;
+    }
+
+    .edit-btn {
+        padding: 9px 22px;
+        font-size: 0.9rem;
+        align-self: stretch;
         justify-content: center;
-        text-align: center;
-    }
-
-    .brand-title {
-        letter-spacing: 0.15em;
-    }
-
-    .header-search {
-        margin-top: 15px;
-    }
-
-    .mic-btn {
-        width: 70px;
-        height: 70px;
-        right: 20px;
-        bottom: 20px;
     }
 }
