@@ -47,6 +47,44 @@ color:#666666 ;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); ;
      opacity: 0.8;
 }
+
+.title-header {
+    position: relative;
+    display: flex;
+    justify-content: center; /* centers h1 */
+    align-items: center;
+    margin-top: 10px;
+}
+
+.title-header h1 {
+    margin: 0;
+    text-align: center;
+    flex: 0 1 auto; /* allows button to not affect centering */
+}
+
+.edit-btn {
+    position: absolute;
+    right: 0; /* float to the right edge of the container */
+    padding: 8px 15px;
+    background-color: #90C1BE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #7daead;
+}
+
+
+.edit-btn:hover {
+    background-color: #7daead; /* darker shade on hover */
+}
+
+
 .layer1 {
     display: flex;
     align-items: flex-start; /* optional: aligns them at the top */
