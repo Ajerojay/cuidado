@@ -1,0 +1,237 @@
+body{
+    background-color: white;
+        font-family: 'Poppins', sans-serif;
+}
+body, html, main, .preview-canvas, .body {
+    margin: 0;
+    padding: 0;
+}
+
+/*body body*/
+.body {
+    padding: 40px 40px 40px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    background-color: rgb(255, 255, 255);
+}
+.title {
+    position: relative; /* make children positionable */
+    width: 100%;
+}
+
+.title h1{
+margin-top:10px;
+color: rgb(27, 27, 27);
+font-family:'Poppins';
+    font-size: 2.8rem;
+        text-align: center;
+}
+
+.title p{
+    text-align: center;
+    font-family:'Poppins';
+font-weight: 500;
+color:#666666 ;
+
+}
+.title img{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); ;
+     opacity: 0.8;
+}
+.layer1 {
+    display: flex;
+    align-items: flex-start; /* optional: aligns them at the top */
+    gap: 20px; /* optional spacing */
+}
+
+/* Remove the big margin-right on overview */
+.overview {
+    margin-right: 0; 
+    flex: 1; /* lets it take available space */
+}
+.overview p{
+text-align: justify;
+}
+
+.prevention {
+    background: #C2E1DF; /* light yellow sticky note color */
+    padding: 20px;
+    width: 500px; /* or whatever size you prefer */
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: rotate(-2deg); /* slight tilt for sticky-note feel */
+}
+.prevention-head {
+    background: #E8F2F3; /* slightly darker shade than sticky note */
+    padding: 0px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.prevention-head h4 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+/* Optional: add a "tape" or "pin" effect */
+.prevention::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 18px;
+    background: rgba(229, 229, 229, 0.6);
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Header inside the sticky note */
+.prevention .prevention-head h4 {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.layer2 {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.symptoms, .causes {
+    flex: 1;
+    padding: 25px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    border: 1px solid #e8e8e8;
+    transition: 0.3s ease;
+}
+
+.symptoms:hover, .causes:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.symptoms h3, .causes h3 {
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.symptoms ul, .causes ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.symptoms li, .causes li {
+    margin-bottom: 6px;
+}
+.layer3 {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Left box = 1/4 width */
+.left-box {
+    flex: 1; 
+    background: #C2E1DF;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.left-box p{
+    text-align: justify;
+}
+
+.left-box h1 {
+    position: relative;
+    display: inline-block; /* so the line can be positioned relative to H1 */
+    margin-bottom: 20px;
+}
+
+/* Half-width thick line under H1 */
+.left-box h1::after {
+    content: "";
+    display: block;
+    width: 50%;           /* half the width of the H1 (or box) */
+    height: 6px;          /* thickness of the line */
+    background-color: #90C1BE; /* choose your color */
+    margin-top: 10px;     /* space below H1 */
+}
+
+/* Right box = 3/4 width */
+.right-box {
+    flex: 3; 
+    background: #E8F2F3;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Inner boxes container */
+.inner-boxes {
+    display: flex;
+    gap: 20px;               /* space between inner boxes */
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Each inner box */
+.inner-box {
+    flex: 1;
+    background: #f9f8f8;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #dcdcdc;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for inner boxes */
+.inner-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+/* Images inside inner boxes */
+.inner-box img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Headings inside inner boxes */
+.inner-box h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: #89D0D8;
+}
+
+.tag p{
+        text-align: center;
+    font-family:'Poppins';
+font-weight: 500;
+color:#666666 ;
+font-size: 11px;
+margin-top: 20px;
+margin-left: 80px;
+}
