@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUIDADO • Home Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../sidebar/sidebar.css">
+    <link rel="stylesheet" href="medpage.css">
+    <script src="../sidebar/sidebar.js" defer></script>
+</head>
+<body class="with-sidebar medpage-page home-low">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-item">
+            <a href="#">
+                <img src="../sidebar/user.png" alt="Profile icon">
+                <span>PROFILE</span>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a href="#">
+                <img src="../sidebar/HOME.png" alt="Homepage icon">
+                <span>HOMEPAGE</span>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a href="#">
+                <img src="../sidebar/dis.png" alt="Disease icon">
+                <span>DISEASE</span>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a href="#">
+                <img src="../sidebar/aboutus.png" alt="About us icon">
+                <span>ABOUT&nbsp;US</span>
+            </a>
+        </div>
+        <div class="sidebar-item logout">
+            <a href="#">
+                <img src="../sidebar/log out.png" alt="Logout icon">
+                <span>LOGOUT</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="preview-canvas">
+        <header class="app-header">
+            <div class="header-left">
+                <img src="images/logo.png" alt="CUIDADO logo" class="brand-logo">
+            </div>
+            <div class="header-search">
+                <input type="text" placeholder="Search keywords...">
+                <button aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </header>
+    </main>
+
+        <div class="content-area">
+            <section class="hero-card">
+                <div class="hero-pill">
+                    <img src="images/home.png" alt="home illustration">
+                </div>
+                <div class="hero-copy">
+                    <h1>Home Treatment</h1>
+                    <p>Safe and effective home treatments recommended by experts.</p>
+                </div>
+            </section>
+
+            <section class="medicine-table">
+                <h2>Common Home Remedies</h2>
+
+                <div class="table-card">
+                    <div class="table-row">
+                        <div class="row-image">
+                            <img src="images/hydrate.png" alt="Water glass">
+                        </div>
+                        <div class="row-content">
+                            <h3>Stay Hydrated</h3>
+                            <p>Diarrhea causes a deficit of fluids, including water. This causes the body to lose  <span class="link"> electrolytes </span> such as sodium and chloride. Restoring fluids is vital to support recovery. Otherwise, a person may experience.<span class="link"> dehydration </span></p>
+                        </div>
+                    </div>
+
+                    <div class="table-row">
+                        <div class="row-image">
+                            <img src="images/yakult.png" alt="Compression stockings">
+                        </div>
+                        <div class="row-content">
+                            <h3>Taking probiotics</h3>
+                            <p><span class="link">Probiotics </span> are microorganisms that can benefit the digestive system. 
+                                They may support the workings of the gut and help people fight off infection.</p>
+                        </div>
+                    </div>
+
+                    <div class="table-row">
+                        <div class="row-image">
+                            <img src="images/sleep.png" alt="Balanced plate">
+                        </div>
+                        <div class="row-content">
+                            <h3>Rest and Recovery</h3>
+                            <p><span class="link">Diarrhea</span> can make you feel weak and fatigued. If possible, take a few days off to rest, 
+                                eat nutritious foods, and relax with a warm compress on your abdomen. This can significantly improve your recovery.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer-warning">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <p>Check with your doctor before changing diet, activity, or medication.</p>
+            </footer>
+
+            <button class="edit-btn" aria-label="Edit plan details">
+                Edit details &rarr;
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
