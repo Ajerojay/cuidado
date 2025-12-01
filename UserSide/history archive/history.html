@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUIDADO • History</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="history.css">
+    <script src="sidebar.js" defer></script>
+</head>
+
+<body class="sidebar-demo with-sidebar">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-item" id="profileMenu">
+            <a href="#">
+                <img src="user.png" alt="Profile icon">
+                <span>PROFILE</span>
+            </a>
+
+            <div class="submenu">
+                <a href="#">
+                    <img src="book.png" alt="">
+                    <span class="sub">ARCHIVE</span>
+                </a>
+                <a href="#">
+                    <img src="clock.png" alt="">
+                    <span class="sub">HISTORY</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="sidebar-item">
+            <a href="#">
+                <img src="HOME.png" alt="Homepage icon">
+                <span>HOMEPAGE</span>
+            </a>
+        </div>
+
+        <div class="sidebar-item">
+            <a href="#">
+                <img src="dis.png" alt="Disease icon">
+                <span>DISEASE</span>
+            </a>
+        </div>
+
+        <div class="sidebar-item">
+            <a href="#">
+                <img src="aboutus.png" alt="About Us icon">
+                <span>ABOUT&nbsp;US</span>
+            </a>
+        </div>
+
+        <div class="sidebar-item">
+            <a href="contactUs.html">
+                <img src="phone-call.png" alt="Contact icon">
+                <span>CONTACT&nbsp;US</span>
+            </a>
+        </div>
+
+        <div class="sidebar-item logout">
+            <a href="#">
+                <img src="log out.png" alt="Logout icon">
+                <span>LOGOUT</span>
+            </a>
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="preview-canvas">
+
+        <!-- HEADER (only once) -->
+        <header class="app-header">
+            <div class="header-left">
+                <img src="logo.png" alt="CUIDADO logo" class="brand-logo">
+            </div>
+
+            <div class="header-search">
+                <input type="text" placeholder="Search keywords...">
+                <button aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- HISTORY SECTION -->
+        <section class="history-container">
+
+            <div class="title">
+                <h1>History</h1>
+                <p>provides access to previously saved health information and articles for easy reference and learning.</p>
+            </div>
+
+            <div class="history-cards">
+
+                <!-- Card 1 -->
+                <div class="card">
+                    <img src="sorethroat.png" alt="">
+                    <h2>Sore Throat</h2>
+                    <p>Pain or scratchy feeling in the throat, often worse when swallowing. Common with colds or infections.</p>
+                    <button>Learn more →</button>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <img src="diarrhea.png" alt="">
+                    <h2>Diarrhea</h2>
+                    <p>Frequent loose or watery stools may be caused by food, infection, or stomach upset.</p>
+                    <button>Learn more →</button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <img src="acne.png" alt="">
+                    <h2>Acne</h2>
+                    <p>Pimples or spots on the face and body, common in teens. Keeping skin clean may help.</p>
+                    <button>Learn more →</button>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+
+    <!-- SIDEBAR JS -->
+    <script>
+        const body = document.body;
+        const sidebar = document.getElementById("sidebar");
+        const profileMenu = document.getElementById("profileMenu");
+        const submenu = profileMenu.querySelector(".submenu");
+
+        sidebar.addEventListener("click", (e) => {
+            if (profileMenu.contains(e.target)) return;
+
+            const isExpanded = sidebar.classList.contains("expanded");
+
+            if (isExpanded) {
+                sidebar.classList.remove("expanded");
+                body.classList.remove("sidebar-expanded");
+                profileMenu.classList.remove("open");
+                submenu.style.display = "none";
+            } else {
+                sidebar.classList.add("expanded");
+                body.classList.add("sidebar-expanded");
+            }
+        });
+
+        profileMenu.addEventListener("click", (e) => {
+            e.stopPropagation();
+
+            const isExpanded = sidebar.classList.contains("expanded");
+            if (!isExpanded) {
+                sidebar.classList.add("expanded");
+                body.classList.add("sidebar-expanded");
+            }
+
+            profileMenu.classList.toggle("open");
+            submenu.style.display = profileMenu.classList.contains("open") ? "flex" : "none";
+        });
+    </script>
+
+</body>
+</html>
