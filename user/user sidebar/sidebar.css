@@ -190,7 +190,6 @@ body.with-sidebar .app-header {
     height: auto;
     min-height: 50px;
 }
-
 .header-left {
     display: flex;
     align-items: center;
