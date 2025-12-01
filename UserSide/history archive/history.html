@@ -3,87 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CUIDADO • History</title>
-
+    <title>CUIDADO • Contact Us</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <link rel="stylesheet" href="../user sidebar/sidebar.css">
     <link rel="stylesheet" href="history.css">
-    <script src="sidebar.js" defer></script>
+    <script src="../user sidebar/usersidebar.js" defer></script>
 </head>
-
 <body class="sidebar-demo with-sidebar">
-
-    <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
-
         <div class="sidebar-item" id="profileMenu">
             <a href="#">
-                <img src="user.png" alt="Profile icon">
+                <img src="../user sidebar/user.png" alt="Profile icon">
                 <span>PROFILE</span>
             </a>
-
             <div class="submenu">
-                <a href="#">
-                    <img src="book.png" alt="">
-                    <span class="sub">ARCHIVE</span>
-                </a>
-                <a href="#">
-                    <img src="clock.png" alt="">
-                    <span class="sub">HISTORY</span>
-                </a>
-            </div>
-        </div>
-
+        <a href="#">S
+            <img src="../user sidebar/book.png" alt="">
+            <span class="sub">ARCHIVE</span>
+        </a>
+        <a href="#">
+            <img src="../user sidebar/clock.png" alt="">
+            <span class="sub">HISTORY</span>
+        </a>
+    </div>
+           </div>
         <div class="sidebar-item">
             <a href="#">
-                <img src="HOME.png" alt="Homepage icon">
+                <img src="../user sidebar/HOME.png" alt="Homepage icon">
                 <span>HOMEPAGE</span>
             </a>
         </div>
-
         <div class="sidebar-item">
             <a href="#">
-                <img src="dis.png" alt="Disease icon">
+                <img src="../user sidebar/dis.png" alt="Homepage icon">
                 <span>DISEASE</span>
             </a>
         </div>
-
         <div class="sidebar-item">
             <a href="#">
-                <img src="aboutus.png" alt="About Us icon">
+                <img src="../user sidebar/aboutus.png" alt="Disease icon">
                 <span>ABOUT&nbsp;US</span>
             </a>
         </div>
-
         <div class="sidebar-item">
-            <a href="contactUs.html">
-                <img src="phone-call.png" alt="Contact icon">
-                <span>CONTACT&nbsp;US</span>
+            <a href="#">
+                <img src="../user sidebar/phone-call.png" alt="About us icon">
+                <span>CONTACT US</span>
             </a>
         </div>
-
         <div class="sidebar-item logout">
             <a href="#">
-                <img src="log out.png" alt="Logout icon">
+                <img src="../user sidebar/log out.png" alt="Logout icon">
                 <span>LOGOUT</span>
             </a>
         </div>
-
     </aside>
 
-    <!-- MAIN CONTENT -->
     <main class="preview-canvas">
-
-        <!-- HEADER (only once) -->
         <header class="app-header">
             <div class="header-left">
-                <img src="logo.png" alt="CUIDADO logo" class="brand-logo">
+                <img src="../user sidebar/logo.png" alt="CUIDADO logo" class="brand-logo">
             </div>
-
             <div class="header-search">
                 <input type="text" placeholder="Search keywords...">
                 <button aria-label="Search">
@@ -92,7 +75,6 @@
             </div>
         </header>
 
-        <!-- HISTORY SECTION -->
         <section class="history-container">
 
             <div class="title">
@@ -125,9 +107,7 @@
                     <p>Pimples or spots on the face and body, common in teens. Keeping skin clean may help.</p>
                     <button>Learn more →</button>
                 </div>
-
             </div>
-
         </section>
     </main>
 
@@ -167,6 +147,5 @@
             submenu.style.display = profileMenu.classList.contains("open") ? "flex" : "none";
         });
     </script>
-
 </body>
 </html>
