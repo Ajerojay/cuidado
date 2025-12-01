@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="sidebar.css">
-    <script src="sidebar.js" defer></script>
+    <script src="usersidebar.js" defer></script>
 </head>
 <body class="sidebar-demo with-sidebar">
     <aside class="sidebar" id="sidebar">
@@ -73,41 +73,7 @@
                 </button>
             </div>
         </header>
-<script>
-const body = document.body;
-const sidebar = document.getElementById("sidebar");
-const profileMenu = document.getElementById("profileMenu");
-const submenu = profileMenu.querySelector(".submenu");
-sidebar.addEventListener("click", (e) => {
-    if (profileMenu.contains(e.target)) return;
 
-    const isExpanded = sidebar.classList.contains("expanded");
-
-    if (isExpanded) {
-        sidebar.classList.remove("expanded");
-        body.classList.remove("sidebar-expanded");
-
-        profileMenu.classList.remove("open");
-        submenu.style.display = "none";
-    } else {
-        sidebar.classList.add("expanded");
-        body.classList.add("sidebar-expanded");
-    }
-});
-profileMenu.addEventListener("click", (e) => {
-    e.stopPropagation(); 
-
-    const isExpanded = sidebar.classList.contains("expanded");
-
-    if (!isExpanded) {
-        sidebar.classList.add("expanded");
-        body.classList.add("sidebar-expanded");
-    }
-    profileMenu.classList.toggle("open");
-
-    submenu.style.display = profileMenu.classList.contains("open") ? "flex" : "none";
-});
-</script>
 
     </main>
 </body>
