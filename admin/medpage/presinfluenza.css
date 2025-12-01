@@ -1,9 +1,3 @@
-.preview-canvas + .content-area {
-    margin-left: 50px !important;
-    margin-right: 50px !important;
-}
-
-
 :root {
     --teal: #00a6a6;
     --deep-teal: #007c7a;
@@ -23,23 +17,15 @@ body {
     font-family: 'Poppins', sans-serif;
     display: flex;
     min-height: 100vh;
-    background: #edf7f7;
     color: var(--text-dark);
     overflow-x: hidden;
 }
 
 body.medpage-page {
-    --medpage-bg: #edf7f7 url('images/bg.png') center/cover no-repeat fixed;
-    background: var(--medpage-bg);
+    background: #edf7f7 url('images/bg.png') no-repeat center center fixed;
+    background-size: cover;
 }
 
-body.medpage-page.home-low {
-    --medpage-bg: url('images/homebg.png') center/cover no-repeat fixed;
-}
-
-body.medpage-page.herb-low {
-    --medpage-bg: url('images/herbbg.png') center/cover no-repeat fixed;
-}
 
 .content-area {
     margin-top: 30px;
