@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CUIDADO • Contact Us</title>
+    <title>CUIDADO • Homepage</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../user sidebar/sidebar.css">
+        <link rel="stylesheet" href="Userhomepage.css">
     <script src="../user sidebar/usersidebar.js" defer></script>
 </head>
 <body class="sidebar-demo with-sidebar">
@@ -19,7 +20,7 @@
                 <span>PROFILE</span>
             </a>
             <div class="submenu">
-        <a href="#">S
+        <a href="#">
             <img src="../user sidebar/book.png" alt="">
             <span class="sub">ARCHIVE</span>
         </a>
@@ -74,8 +75,74 @@
             </div>
         </header>
 
+        <div class="content-area">
+    <div class="ad-container">
+        <div class="ad-carousel">
+            <div class="ad-slide active">
+                <img src="ad 1.png">
+            </div>
+            <div class="ad-slide">
+                <img src="ad2.png">
+            </div>
+            <div class="ad-slide">
+                <img src="bio.png">
+            </div>
+
+            <button class="ad-prev">&#10094;</button>
+            <button class="ad-next">&#10095;</button>
+        </div>
+    </div>
+</div>
+
+                <div class="title">
+                    <h1> Cuidado's Features</h1>
+                </div>
+
+                <div class="features-row">
+                    <div class="feature-box">
+                        <h2>Accessible Anytime, <br>Anywhere</h2>
+                        <p>Your reliable medical help system,
+                            ready to support your well-being whenever you need it.</p>
+                    </div>
+
+                    <div class="feature-box">
+                        <h2>Personalized Health <br> Assistance</h2>
+                        <p>Get quick guidance with our built-in voice 
+                            assistant to find the right treatment for your symptoms.</p>
+                    </div>
+
+                    <div class="feature-box">
+                        <h2>Comprehensive <br> care options</h2>
+                        <p>Explore prescribed medicines, natural herbs, and home remedies 
+                            for 18 common illnesses across 6 health categories.</p>
+                    </div>
+                </div>
+
+                <div class="remider">
+                    <p> No more risks in self-medication, Cuidado provides the right information.</p>
+                </div>
 
     </main>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll(".ad-slide");
+
+document.querySelector(".ad-next").addEventListener("click", () => {
+    changeSlide(currentSlide + 1);
+});
+
+document.querySelector(".ad-prev").addEventListener("click", () => {
+    changeSlide(currentSlide - 1);
+});
+
+function changeSlide(index) {
+    slides[currentSlide].classList.remove("active");
+    currentSlide = (index + slides.length) % slides.length;
+    slides[currentSlide].classList.add("active");
+}
+</script>
+
 </body>
 
 </html>
