@@ -1,0 +1,161 @@
+/* Space for content under fixed header */
+.content-area {
+    margin-top: 0px; /* clears your fixed header height */
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+/* The ad container takes HALF of the screen width */
+.ad-container {
+    width: 100%;
+    margin: 0 auto; /* center horizontally */
+}
+
+/* Carousel wrapper */
+.ad-carousel {
+    width: 100%;
+    height: 550px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Slides */
+.ad-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 100%;
+    opacity: 0;
+    top: 0;
+    transition: all 0.6s ease;
+}
+
+.ad-slide.active {
+    left: 0;
+    opacity: 1;
+}
+
+.ad-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Prev/Next buttons */
+.ad-prev, .ad-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 12px 18px;
+    background: rgba(0,0,0,0.45);
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.ad-prev { left: 12px; }
+.ad-next { right: 12px; }
+
+.ad-prev:hover, .ad-next:hover {
+    background: rgba(0,0,0,0.65);
+}
+
+/* --- Responsive Fixes --- */
+@media (max-width: 900px) {
+    .ad-container {
+        width: 80%;
+    }
+    .ad-carousel {
+        height: 220px;
+    }
+}
+
+@media (max-width: 600px) {
+    .ad-container {
+        width: 95%;
+    }
+    .ad-carousel {
+        height: 180px;
+    }
+}
+
+.title h1{
+margin-top:20px;
+text-align: center;
+font-family:'Poppins';
+    background: linear-gradient(to right, #00BFA6, #00796B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 40px;
+}
+/* Title styling (optional enhancement) */
+.title {
+    margin-top: 40px;
+    text-align: center;
+}
+.title h1 {
+    font-size: 2rem;
+    color: #0f4242;
+}
+
+/* === FEATURES ROW === */
+.features-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+    padding: 0 20px;
+}
+
+.feature-box {
+    background: #F0FAFA;
+    width: 400px;
+    padding: 25px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+
+
+.feature-box h2 {
+    font-size: 1.2rem;
+    color: #0f4242;
+    margin-bottom: 10px;
+}
+
+.feature-box p {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 1000px) {
+    .features-row {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 700px) {
+    .feature-box {
+        width: 80%;
+    }
+}
+
+.remider{
+    margin-top:50px;
+text-align: center;
+font-family:'Poppins';
+color: grey;
+margin-bottom: 50px;
+}
