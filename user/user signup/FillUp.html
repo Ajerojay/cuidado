@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CUIDADO Form</title>
+  <link rel="stylesheet" href="FillUp.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <img src="logo (2).png" alt="CUIDADO Logo" class="logo">
+
+      <form id="cuidadoForm">
+        <label>Email:</label>
+        <input type="text" id="email" placeholder="Enter email">
+
+        <label>Birthday:</label>
+        <input type="date" id="birthday" placeholder="mm/dd/yy">
+
+        <label>Sex:</label>
+        <select>
+          <option>Female</option>
+          <option>Male</option>
+        </select>
+
+        <button type="submit">SAVE</button>
+
+        <p id="errorMsg"></p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('cuidadoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value.trim();
+      const errorMsg = document.getElementById('errorMsg');
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (email === "") {
+        errorMsg.textContent = "Please enter your email.";
+        errorMsg.style.color = "red";
+      } else if (!emailPattern.test(email)) {
+        errorMsg.textContent = "Please enter a valid email address.";
+        errorMsg.style.color = "red";
+      } else {
+        errorMsg.textContent = "Email saved successfully!";
+        errorMsg.style.color = "green";
+      }
+    });
+
+    const birthdayInput = document.getElementById('birthday');
+    birthdayInput.max = "2025-12-31";
+
+    birthdayInput.addEventListener('change', function() {
+      if (this.value > "2025-12-31") {
+        alert("Please select a birthday from 2025 or earlier.");
+        this.value = "";
+      }
+    });
+  </script>
+</body>
+</html>
