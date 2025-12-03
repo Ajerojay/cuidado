@@ -313,7 +313,7 @@ body.sidebar-expanded .header-left {
 /* LEARN MORE BUTTON */
 .learn-more-btn {
     padding: 5px 15px;
-    background: #7dbebb;
+    background: #457B79;
     color: #fff;
     border: none;
     border-radius: 25px;
@@ -331,7 +331,7 @@ body.sidebar-expanded .header-left {
     position: fixed;
     bottom: 50px;
     right: 75px;
-    background-color: #58b7b3;
+    background-color: #457B79;
     color: #fff;
     padding: 14px 22px;
     border-radius: 50px;
