@@ -12,7 +12,6 @@
 
     <header>
         <h2>Add Sickness</h2>
-        <button class="back-btn">BACK</button>
     </header>
     <hr>
 
@@ -30,7 +29,7 @@
 
         </div>
 
-      <div class="right-column">
+<div class="right-column">
     <div class="right-column-wrapper">
         <div class="image-upload">
             <button class="add-btn">ADD</button>
@@ -38,14 +37,21 @@
                 <img src="https://cdn-icons-png.flaticon.com/512/685/685655.png">
             </div>
         </div>
-
     </div>
+
+    <!-- Buttons moved here -->
     <div class="buttons">
         <button class="cancel-btn">Cancel</button>
         <button class="save-btn">Save</button>
     </div>
 </div>
 </div>
+<script>
+document.querySelector(".cancel-btn").addEventListener("click", function(){
+    // This assumes the parent has the overlay
+    window.parent.document.getElementById("popup-overlay").style.display = "none";
+});
+</script>
 
 </body>
 </html>
