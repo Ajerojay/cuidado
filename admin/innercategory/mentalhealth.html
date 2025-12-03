@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUIDADO • Sidebar Component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../sidebar/sidebar.css">
+    <link rel="stylesheet" href="hearthealth.css">
+    <script src="sidebar.js" defer></script>
+</head>
+<body class="sidebar-demo with-sidebar">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-item">
+            <a href="#">
+                <img src="../sidebar/user.png" alt="Profile icon">
+                <span>PROFILE</span>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a href="#">
+                <img src="../sidebar/HOME.png" alt="Homepage icon">
+                <span>HOMEPAGE</span>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a href="#">
+                <img src="../sidebar/dis.png" alt="Disease icon">
+                <span>DISEASE</span>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a href="aboutus.html">
+                <img src="../sidebar/aboutus.png" alt="About us icon">
+                <span>ABOUT&nbsp;US</span>
+            </a>
+        </div>
+        <div class="sidebar-item logout">
+            <a href="#">
+                <img src="../sidebar/log out.png" alt="Logout icon">
+                <span>LOGOUT</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="preview-canvas">
+        <header class="app-header">
+            <div class="header-left">
+                <img src="../sidebar/logo.png" alt="CUIDADO logo" class="brand-logo">
+            </div>
+            <div class="header-search">
+                <input type="text" placeholder="Search keywords...">
+                <button aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </header>
+    </main>
+
+    <section class="hearthealth-container">
+
+         <div class="hearthealth-header" style = "display:flex; align-items: center; justifiy-content: center; gap:15px;">
+        <img src="mental.png" alt="heart" class="hearthealth-icon">
+        <h1 class="hearthealth-title">Mental Health</h1>
+        </div>
+        
+        <p class="title-description">Learn about common heart-related conditions, their symptoms, and possible treatments. For serious concerns, always consult a doctor.</p>
+    
+        <div class="hearthealth-wrapper">
+    
+            <!-- CARD 1 -->
+            <div class="hearthealth-card">
+                <div class="hearthealth-pic-box">
+                    <img src="anxiety.png" alt="High Blood" class="hearthealth-pic">
+                    <p class="hearthealth-name">Anxiety</p>
+                    <p class="description">A feeling of worry or fear that can cause restlessness, fast heartbeat, or trouble focusing. </p>
+                    <button class="learn-more-btn">Learn More</button>
+                </div>
+            </div>
+    
+            <!-- CARD 2 -->
+            <div class="hearthealth-card">
+                <div class="hearthealth-pic-box">
+                    <img src="insomia.png" alt="Low Blood" class="hearthealth-pic">
+                    <p class="hearthealth-name">Insomia</p>
+                    <p class="description">Difficulty falling asleep or staying asleep, leading to tiredness and low energy during the day.</p>
+                    <button class="learn-more-btn">Learn More</button>
+                </div>
+            </div>
+    
+            <!-- CARD 3 -->
+            <div class="hearthealth-card">
+                <div class="hearthealth-pic-box">
+                    <img src="stress1.png" alt="Heart Attack" class="hearthealth-pic">
+                    <p class="hearthealth-name">Stress</p>
+                    <p class="description">The body’s and mind’s response to external or internal pressures, challenges, or demands.</p>
+                    <button class="learn-more-btn">Learn More</button>
+                </div>
+            </div>
+            
+            <!-- ADD BUTTON FIXED AT BOTTOM RIGHT -->
+            <a href="#" class="add-btn">
+                Add
+            </a>
+
+        </div>
+    </section>
+    
+</body>
+</html>    
