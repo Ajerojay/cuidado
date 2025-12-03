@@ -211,156 +211,171 @@ body.sidebar-expanded .header-left {
     color: #333;
 }
 
-/* MAIN HEART HEALTH CONTAINER */
-.hearthealth-container {
-    padding: 80px 40px 40px;
+/* MAIN PROFILE CONTAINER */
+.profile-container {
+    padding: 110px 40px 40px;
     width: 100%;
-    background-color: #fefefe;
 }
 
-.hearthealth-title {
+.profile-title {
     text-align: center;
     font-size: 2rem;
     font-weight: 600;
-    margin-bottom: 30px;
+    margin-top: -80px;
+    margin-bottom: 50px;
     color: #0f4242;
-    position: relative;
-}
-.hearthealth-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0px;
-    margin-bottom: 10px;
 }
 
-.hearthealth-icon {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    margin-bottom: auto;
+.profile-divider {
+    width: 80%;
+    border: none;
+    border-top: 2px dashed #7dbebb; /* broken line */
+    margin: 10px auto 25px;
+    margin-top: -50px;
+    margin-bottom: 40px;
 }
-/* Optional: broken line under title */
-.hearthealth-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: #7dbebb;
-    margin: 8px auto 0;
-    border-radius: 2px;
-}
+
 
 /* MAIN WRAPPER */
-.hearthealth-wrapper {
+.profile-wrapper {
     display: flex;
     flex-direction: row;
+    gap: 100px;
     justify-content: center;
-    gap: 30px;
+    align-items: flex-start;
 }
 
-/* CARD */
-.hearthealth-card {
-    background: #F0FAFA;
+/* LEFT SIDE */
+.profile-left {
+    background: #f7f7f7;
     padding: 25px;
     width: 300px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
-/* IMAGE AND CONTENT BOX */
-.hearthealth-pic-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.profile-pic-box {
+    position: relative;
 }
 
-/* PROFILE IMAGE */
-.hearthealth-pic {
-    width: 120px;
-    height: 120px;
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 2px solid #7dbebb;
     object-fit: cover;
-    margin-bottom: 12px;
 }
 
-/* CARD NAME */
-.hearthealth-name {
+.edit-pic-btn {
+    margin-top: 5px;
+    padding: 5px 10px;
+    background: #7dbebb;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 0.70rem;
+}
+
+.profile-name {
+    margin-top: 10px;
     font-weight: 600;
-    font-size: 1.1rem;
-    color: #0f4242;
-    margin-bottom: 8px;
+    font-size: 1.2rem;
 }
 
-/* DESCRIPTION TEXT */
-.title-description {
-    font-size: 0.85rem;
-    color: #555;
-    margin-bottom: 15px;
-    line-height: 1.3;
+.profile-links {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 70px;
+}
+
+.profile-link {
+    text-decoration: none;
+    color: #0f4242;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.logout-link {
+    display: block;
+    margin-top: 25px;
+    color: red;
+    text-decoration: none;
+    font-weight: 600;
     text-align: center;
 }
-.description {
-    font-size: 0.85rem;
-    color: #555;
-    margin-bottom: 15px;
-    line-height: 1.3;
+
+/* RIGHT SIDE FORM */
+.profile-right {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    gap: 12px;
 }
 
-/* LEARN MORE BUTTON */
-.learn-more-btn {
-    padding: 5px 15px;
-    background: #457B79;
+.profile-right label {
+    font-weight: 600;
+    color: #0f4242;
+}
+
+.profile-right input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+/* BUTTONS */
+.profile-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.cancel-btn {
+    background: #d9534f;
     color: #fff;
+    padding: 10px 18px;
     border: none;
     border-radius: 25px;
     cursor: pointer;
-    font-size: 0.7rem;
-    transition: background 0.3s;
 }
 
-.learn-more-btn:hover {
-    background: #5aa7a3;
-}
-
-/* ADD BUTTON FIXED POSITION */
-.add-btn {
-    position: fixed;
-    font-size: 0.9rem;
-    bottom: 50px;   /* distance from bottom of page */
-    right: 75px;    /* distance from right of page */
-    background-color: #58b7b3;
+.save-btn {
+    background: #58b7b3;
     color: #fff;
-    padding: 14px 22px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: background 0.3s, transform 0.2s;
-    z-index: 1000;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
 }
 
-.add-btn:hover {
-    background-color: #3ea2a0;
-    transform: translateY(-2px);
-}
-
-
-
-/* RESPONSIVE */
-@media screen and (max-width: 1000px) {
-    .hearthealth-wrapper {
-        justify-content: center;
-        gap: 20px;
+@media (max-width: 1200px) {
+    :root {
+        --sidebar-width-collapsed: 60px;
+        --sidebar-width-expanded: 200px;
     }
-}
 
-@media screen and (max-width: 700px) {
-    .hearthealth-wrapper {
-        flex-direction: column;
-        align-items: center;
+    .sidebar {
+        padding: 30px 6px 20px;
+    }
+
+    .sidebar.expanded {
+        padding: 35px 16px 24px;
+    }
+
+    .sidebar-item span {
+        font-size: 0.6rem;
+    }
+
+    .brand-logo {
+        max-height: 30px;
+        width: 100px;
     }
 }
