@@ -1,3 +1,9 @@
+.preview-canvas + .content-area {
+    margin-left: 50px !important;
+    margin-right: 50px !important;
+}
+
+
 :root {
     --teal: #00a6a6;
     --deep-teal: #007c7a;
@@ -20,11 +26,19 @@ body {
     background: #edf7f7;
     color: var(--text-dark);
     overflow-x: hidden;
-
 }
+
 body.medpage-page {
-    background: #edf7f7 url('images/herbbg.png') no-repeat center center fixed;
-    background-size: cover;
+    --medpage-bg: #edf7f7 url('images/bg.png') center/cover no-repeat fixed;
+    background: var(--medpage-bg);
+}
+
+body.medpage-page.home-low {
+    --medpage-bg: url('images/homebg.png') center/cover no-repeat fixed;
+}
+
+body.medpage-page.herb-low {
+    --medpage-bg: url('images/herbbg.png') center/cover no-repeat fixed;
 }
 
 .content-area {
@@ -129,6 +143,14 @@ body.medpage-page {
 .row-content .link {
     color: var(--teal);
     font-weight: 600;
+}
+
+.row-content strong {
+    background: linear-gradient(120deg, #7dbebb 0%, #90c1be 100%);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #0f4242;
 }
 
 .footer-warning {
