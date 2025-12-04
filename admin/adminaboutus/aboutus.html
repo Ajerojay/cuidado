@@ -8,40 +8,56 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="../sidebar/sidebar.css">
+    <link rel="stylesheet" href="../../user/user sidebar/sidebar.css">
     <link rel="stylesheet" href="aboutus.css">
-    <script src="../sidebar/sidebar.js" defer></script>
+    <script src="../../user/user sidebar/usersidebar.js" defer></script>
     <script src="aboutus.js" defer></script>
 </head>
 <body class="with-sidebar">
     <aside class="sidebar" id="sidebar">
-        <div class="sidebar-item">
-            <a href="profile.html">
-                <img src="../sidebar/user.png" alt="Profile icon">
+        <div class="sidebar-item" id="profileMenu">
+            <a href="#">
+                <img src="../../user/user sidebar/user.png" alt="Profile icon">
                 <span>PROFILE</span>
             </a>
+            <div class="submenu">
+                <a href="#">
+                    <img src="../../user/user sidebar/book.png" alt="">
+                    <span class="sub">ARCHIVE</span>
+                </a>
+                <a href="#">
+                    <img src="../../user/user sidebar/clock.png" alt="">
+                    <span class="sub">HISTORY</span>
+                </a>
+            </div>
         </div>
         <div class="sidebar-item">
-            <a href="homepage.html">
-                <img src="../sidebar/HOME.png" alt="Homepage icon">
+            <a href="#">
+                <img src="../../user/user sidebar/HOME.png" alt="Homepage icon">
                 <span>HOMEPAGE</span>
             </a>
         </div>
         <div class="sidebar-item">
-            <a href="disease.html">
-                <img src="../sidebar/dis.png" alt="Disease icon">
+            <a href="#">
+                <img src="../../user/user sidebar/dis.png" alt="Disease icon">
                 <span>DISEASE</span>
             </a>
         </div>
         <div class="sidebar-item">
             <a href="aboutus.html">
-                <img src="../sidebar/aboutus.png" alt="About us icon">
+                <img src="../../user/user sidebar/aboutus.png" alt="About us icon">
                 <span>ABOUT&nbsp;US</span>
             </a>
         </div>
+        <div class="sidebar-item">
+            <a href="#">
+                <img src="../../user/user sidebar/phone-call.png" alt="Contact us icon">
+                <span>CONTACT US</span>
+            </a>
+        </div>
         <div class="sidebar-item logout">
-            <a href="logout.html">
-                <img src="../sidebar/log out.png" alt="Logout icon">
+            <a href="#">
+                <img src="../../user/user sidebar/log out.png" alt="Logout icon">
                 <span>LOGOUT</span>
             </a>
         </div>
@@ -50,7 +66,7 @@
     <main class="preview-canvas">
         <header class="app-header">
             <div class="header-left">
-                <img src="../admin/logo.png" alt="CUIDADO logo" class="brand-logo">
+                <img src="images/logo.png" alt="CUIDADO logo" class="brand-logo">
             </div>
             <div class="header-search">
                 <input type="text" placeholder="Search keywords...">
@@ -117,7 +133,7 @@
                 <div class="about-content">
                     <h2 class="section-subtitle about-us-title">ABOUT US</h2>
                     <div class="about-image">
-                        <img src="../admin/logo.png" alt="CUIDADO logo" class="about-logo">
+                        <img src="images/logo.png" alt="CUIDADO logo" class="about-logo">
                     </div>
                     <div class="about-text">
                         <div class="about-details">

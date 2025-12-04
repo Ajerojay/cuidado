@@ -1,0 +1,507 @@
+:root {
+    --teal-primary: #90c1be;
+    --teal-dark: #0f4242;
+    --teal-light: #7dbebb;
+    --teal-gradient-start: #7dbebb;
+    --teal-gradient-end: #5aa8a5;
+    --text-dark: #0c2c34;
+    --text-muted: #4c6a72;
+    --white: #ffffff;
+    --gray-light: #f5f5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.with-sidebar {
+    background: var(--white);
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(90deg, var(--teal-light), var(--teal-gradient-end));
+    padding: 40px 30px 60px;
+    position: relative;
+    overflow: hidden;
+    margin-top: -60px;
+    padding-top: 100px;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    background-image: url('images/Medical_Team_Photography.png');
+    background-size: cover;
+    background-position: center 40%;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 15px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+}
+
+.hero-text p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+
+.hero-text {
+    max-width: 600px;
+    position: relative;
+    z-index: 2;
+}
+
+.wave-separator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 2;
+    display: block;
+}
+
+.hero-indicators {
+    position: absolute;
+    bottom: 20px;
+    right: 50%;
+    transform: translateX(50%);
+    display: flex;
+    gap: 10px;
+    z-index: 3;
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.indicator.active {
+    background: var(--white);
+}
+
+/* Mission Vision Section */
+.mission-vision-section {
+    background: var(--white);
+    padding: 40px 0;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+}
+
+.section-title.white {
+    color: var(--white);
+}
+
+.section-description {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-description.white {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-bottom: 30px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mission-vision-card {
+    text-align: center;
+    padding: 15px 10px;
+}
+
+.mission-vision-icon-circle {
+    width: 80px;
+    height: 80px;
+    border: 3px solid var(--teal-primary);
+    border-radius: 50%;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+
+.mission-vision-icon-circle i {
+    font-size: 2rem;
+    color: var(--teal-primary);
+}
+
+.mission-vision-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+}
+
+.mission-vision-card p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.view-all-btn {
+    background: var(--teal-primary);
+    color: var(--white);
+    border: none;
+    padding: 10px 30px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.view-all-btn:hover {
+    background: var(--teal-dark);
+    transform: translateY(-2px);
+}
+
+/* About Section */
+.about-section {
+    background: var(--white);
+    padding: 80px 0;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-us-title {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-logo {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+.about-text {
+    padding-left: 20px;
+}
+
+.about-section .section-subtitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 40px;
+    letter-spacing: 0.05em;
+    text-align: center;
+    grid-column: 1 / -1;
+}
+
+.section-subtitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    letter-spacing: 0.05em;
+}
+
+.about-details {
+    margin-bottom: 30px;
+}
+
+.story-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.story-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--teal-primary);
+}
+
+.story-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.about-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+}
+
+.features-list {
+    list-style: none;
+    margin: 25px 0;
+    padding: 0;
+}
+
+.features-list li {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.features-list li i {
+    color: var(--teal-primary);
+    font-size: 1.1rem;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.about-conclusion {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-top: 25px;
+    font-weight: 500;
+}
+
+/* Doctors Section */
+.doctors-section {
+    background: var(--teal-dark);
+    padding: 80px 0;
+    position: relative;
+}
+
+.doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.doctor-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.doctor-image {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.doctor-placeholder {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: var(--gray-light);
+    border: 4px solid var(--teal-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.team-member-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--teal-primary);
+    margin: 0 auto;
+    display: block;
+}
+
+.doctor-placeholder i {
+    font-size: 4rem;
+    color: var(--teal-primary);
+    opacity: 0.5;
+}
+
+.doctor-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.doctor-card p {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .section-container {
+        padding: 0 30px;
+    }
+
+    .mission-vision-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .doctors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section::before {
+        background-position: center bottom;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-text {
+        padding-left: 0;
+    }
+
+    .mission-vision-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .doctors-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-section {
+        padding: 60px 20px 80px;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section::before {
+        background-position: center bottom;
+    }
+
+    .section-container {
+        padding: 0 20px;
+    }
+
+    .mission-vision-section,
+    .about-section,
+    .doctors-section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .mission-vision-icon-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .mission-vision-icon-circle i {
+        font-size: 2.5rem;
+    }
+}
+

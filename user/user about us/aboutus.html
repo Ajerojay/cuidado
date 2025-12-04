@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUIDADO • About Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../user sidebar/sidebar.css">
+    <link rel="stylesheet" href="aboutus.css">
+    <script src="../user sidebar/usersidebar.js" defer></script>
+    <script src="aboutus.js" defer></script>
+</head>
+<body class="with-sidebar">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-item" id="profileMenu">
+            <a href="#">
+                <img src="../user sidebar/user.png" alt="Profile icon">
+                <span>PROFILE</span>
+            </a>
+            <div class="submenu">
+                <a href="../history archive/archive.html">
+                    <img src="../user sidebar/book.png" alt="">
+                    <span class="sub">ARCHIVE</span>
+                </a>
+                <a href="../history archive/history.html">
+                    <img src="../user sidebar/clock.png" alt="">
+                    <span class="sub">HISTORY</span>
+                </a>
+            </div>
+        </div>
+        <div class="sidebar-item">
+            <a href="../homepage/Userhomepage.html">
+                <img src="../user sidebar/HOME.png" alt="Homepage icon">
+                <span>HOMEPAGE</span>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a href="#">
+                <img src="../user sidebar/dis.png" alt="Disease icon">
+                <span>DISEASE</span>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a href="aboutus.html">
+                <img src="../user sidebar/aboutus.png" alt="About us icon">
+                <span>ABOUT&nbsp;US</span>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a href="../user contactUs/contactUs.html">
+                <img src="../user sidebar/phone-call.png" alt="Contact us icon">
+                <span>CONTACT US</span>
+            </a>
+        </div>
+        <div class="sidebar-item logout">
+            <a href="../user login/userLogin.html">
+                <img src="../user sidebar/log out.png" alt="Logout icon">
+                <span>LOGOUT</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="preview-canvas">
+        <header class="app-header">
+            <div class="header-left">
+                <img src="images/logo.png" alt="CUIDADO logo" class="brand-logo">
+            </div>
+            <div class="header-search">
+                <input type="text" placeholder="Search keywords...">
+                <button aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 id="hero-title">WE PROVIDE BEST HEALTHCARE GUIDE</h1>
+                    <p id="hero-description">At Cuidado, we believe that good health starts with the right information. Our innovative voice-activated platform allows you to simply speak your questions, and our intelligent system will guide you to the most relevant medical information and resources.</p>
+                </div>
+            </div>
+            <div class="hero-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
+            <svg class="wave-separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path fill="#ffffff" d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,58.7C960,64,1056,64,1152,58.7C1248,53,1344,43,1392,37.3L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+            </svg>
+        </section>
+
+        <section class="mission-vision-section">
+            <div class="section-container">
+                <h2 class="section-title" id="mission-vision-title">MISSION & VISION</h2>
+                <p class="section-description" id="mission-vision-description">Our commitment to providing accessible healthcare information through innovative technology.</p>
+                
+                <div class="mission-vision-grid">
+                    <div class="mission-vision-card">
+                        <div class="mission-vision-icon-circle">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3 id="mission-title">OUR MISSION</h3>
+                        <p id="mission-text">To empower individuals with accurate, reliable medical information through our innovative voice-activated platform, making healthcare knowledge accessible to everyone, anytime, anywhere.</p>
+                    </div>
+                    <div class="mission-vision-card">
+                        <div class="mission-vision-icon-circle">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h3 id="vision-title">OUR VISION</h3>
+                        <p id="vision-text">To become the leading voice-activated healthcare information platform, revolutionizing how people access medical knowledge and reducing risks in self-medication through intelligent, user-friendly technology.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section class="about-section">
+            <div class="section-container">
+                <div class="about-content">
+                    <h2 class="section-subtitle about-us-title">ABOUT US</h2>
+                    <div class="about-image">
+                        <img src="images/logo.png" alt="CUIDADO logo" class="about-logo">
+                    </div>
+                    <div class="about-text">
+                        <div class="about-details">
+                            <h3 class="story-title">OUR STORY</h3>
+                            <p class="story-text" id="story-text">No more risks in self-medication, Cuidado provides the right information through intelligent voice navigation.</p>
+                            <p class="about-description" id="about-description">At Cuidado, we believe that good health starts with the right information. Our innovative voice-activated platform allows you to simply speak your medical questions, and our intelligent system will instantly guide you to the most relevant pages with accurate medical information, medicine recommendations, and health resources.</p>
+                            <ul class="features-list" id="features-list">
+                                <li><i class="fa-solid fa-check"></i> <span>Speak to our voice assistant and get instant access to relevant medical information</span></li>
+                                <li><i class="fa-solid fa-check"></i> <span>Ask questions naturally and be redirected to pages with accurate medical guidance</span></li>
+                                <li><i class="fa-solid fa-check"></i> <span>Search for medicines and learn their uses through voice or text</span></li>
+                            </ul>
+                            <p class="about-conclusion" id="about-conclusion">With Cuidado's voice navigation, safe health care is always just a word away.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Team Section -->
+        <section class="doctors-section">
+            <div class="section-container">
+                <h2 class="section-title white" id="team-title">OUR TEAM</h2>
+                <p class="section-description white" id="team-description">Meet the dedicated team who built Cuidado, bringing innovative healthcare solutions to life.</p>
+                
+                <div class="doctors-grid">
+                    <div class="doctor-card">
+                        <div class="doctor-image">
+                            <img id="team-member-1-photo" src="" alt="" class="team-member-photo" style="display: none;">
+                            <div class="doctor-placeholder" id="team-member-1-placeholder">
+                                <i class="fa-solid fa-user-doctor"></i>
+                            </div>
+                        </div>
+                        <h3 id="team-member-1-name">Eli Nawa</h3>
+                        <p id="team-member-1-role">Developer</p>
+                    </div>
+                    <div class="doctor-card">
+                        <div class="doctor-image">
+                            <img id="team-member-2-photo" src="" alt="" class="team-member-photo" style="display: none;">
+                            <div class="doctor-placeholder" id="team-member-2-placeholder">
+                                <i class="fa-solid fa-user-doctor"></i>
+                            </div>
+                        </div>
+                        <h3 id="team-member-2-name">Alab View</h3>
+                        <p id="team-member-2-role">Designer</p>
+                    </div>
+                    <div class="doctor-card">
+                        <div class="doctor-image">
+                            <img id="team-member-3-photo" src="" alt="" class="team-member-photo" style="display: none;">
+                            <div class="doctor-placeholder" id="team-member-3-placeholder">
+                                <i class="fa-solid fa-user-doctor"></i>
+                            </div>
+                        </div>
+                        <h3 id="team-member-3-name">Mia Mats</h3>
+                        <p id="team-member-3-role">Project Manager</p>
+                    </div>
+                    <!-- Hidden team members (4-6) -->
+                    <div class="doctor-card" style="display: none;">
+                        <div class="doctor-image">
+                            <img id="team-member-4-photo" src="" alt="" class="team-member-photo" style="display: none;">
+                            <div class="doctor-placeholder" id="team-member-4-placeholder">
+                                <i class="fa-solid fa-user-doctor"></i>
+                            </div>
+                        </div>
+                        <h3 id="team-member-4-name">John Doe</h3>
+                        <p id="team-member-4-role">Developer</p>
+                    </div>
+                    <div class="doctor-card" style="display: none;">
+                        <div class="doctor-image">
+                            <img id="team-member-5-photo" src="" alt="" class="team-member-photo" style="display: none;">
+                            <div class="doctor-placeholder" id="team-member-5-placeholder">
+                                <i class="fa-solid fa-user-doctor"></i>
+                            </div>
+                        </div>
+                        <h3 id="team-member-5-name">Jane Smith</h3>
+                        <p id="team-member-5-role">Designer</p>
+                    </div>
+                    <div class="doctor-card" style="display: none;">
+                        <div class="doctor-image">
+                            <img id="team-member-6-photo" src="" alt="" class="team-member-photo" style="display: none;">
+                            <div class="doctor-placeholder" id="team-member-6-placeholder">
+                                <i class="fa-solid fa-user-doctor"></i>
+                            </div>
+                        </div>
+                        <h3 id="team-member-6-name">Bob Wilson</h3>
+                        <p id="team-member-6-role">Developer</p>
+                    </div>
+                </div>
+                <button class="view-all-btn">View All</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+
