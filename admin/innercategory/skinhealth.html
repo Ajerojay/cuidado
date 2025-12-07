@@ -109,5 +109,38 @@
         </div>
     </section>
     
+    <!-- Popup Overlay -->
+<div id="popup-overlay">
+    <div id="popup-content">
+        <button id="popup-close">Back</button>
+        <iframe src="../addingscick/addingsickness.html"></iframe>
+    </div>
+</div>
+
+<script>
+// Open popup
+document.querySelector(".add-btn").addEventListener("click", function(e){
+    e.preventDefault();
+    document.getElementById("popup-overlay").style.display = "flex";
+
+    // Adjust iframe height to fit content
+    const iframe = document.querySelector("#popup-content iframe");
+    iframe.onload = function() {
+        try {
+            // Dynamically set height based on iframe content
+            iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+        } catch (err) {
+            // Cross-origin content may block this
+            iframe.style.height = "600px"; // fallback
+        }
+    }
+});
+
+// Close popup
+document.getElementById("popup-close").addEventListener("click", function(){
+    document.getElementById("popup-overlay").style.display = "none";
+});
+</script>
+
 </body>
 </html>    

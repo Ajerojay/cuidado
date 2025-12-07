@@ -8,56 +8,40 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="../../user/user sidebar/sidebar.css">
+    <link rel="stylesheet" href="../sidebar/sidebar.css">
     <link rel="stylesheet" href="aboutus.css">
-    <script src="../../user/user sidebar/usersidebar.js" defer></script>
+    <script src="../sidebar/sidebar.js" defer></script>
     <script src="aboutus.js" defer></script>
 </head>
 <body class="with-sidebar">
     <aside class="sidebar" id="sidebar">
-        <div class="sidebar-item" id="profileMenu">
-            <a href="#">
-                <img src="../../user/user sidebar/user.png" alt="Profile icon">
+        <div class="sidebar-item">
+            <a href="../Admin profile/admin-profile.html">
+                <img src="../sidebar/user.png" alt="Profile icon">
                 <span>PROFILE</span>
             </a>
-            <div class="submenu">
-                <a href="#">
-                    <img src="../../user/user sidebar/book.png" alt="">
-                    <span class="sub">ARCHIVE</span>
-                </a>
-                <a href="#">
-                    <img src="../../user/user sidebar/clock.png" alt="">
-                    <span class="sub">HISTORY</span>
-                </a>
-            </div>
         </div>
         <div class="sidebar-item">
-            <a href="#">
-                <img src="../../user/user sidebar/HOME.png" alt="Homepage icon">
+            <a href="../dashboard/dashboard.html">
+                <img src="../sidebar/HOME.png" alt="Homepage icon">
                 <span>HOMEPAGE</span>
             </a>
         </div>
         <div class="sidebar-item">
-            <a href="#">
-                <img src="../../user/user sidebar/dis.png" alt="Disease icon">
+            <a href="../diseases/Disease-Category.html">
+                <img src="../sidebar/dis.png" alt="Disease icon">
                 <span>DISEASE</span>
             </a>
         </div>
         <div class="sidebar-item">
-            <a href="aboutus.html">
-                <img src="../../user/user sidebar/aboutus.png" alt="About us icon">
+            <a href="../adminaboutus/aboutus.html">
+                <img src="../sidebar/aboutus.png" alt="About us icon">
                 <span>ABOUT&nbsp;US</span>
             </a>
         </div>
-        <div class="sidebar-item">
-            <a href="#">
-                <img src="../../user/user sidebar/phone-call.png" alt="Contact us icon">
-                <span>CONTACT US</span>
-            </a>
-        </div>
         <div class="sidebar-item logout">
-            <a href="#">
-                <img src="../../user/user sidebar/log out.png" alt="Logout icon">
+            <a href="../login/login.css">
+                <img src="../sidebar/log out.png" alt="Logout icon">
                 <span>LOGOUT</span>
             </a>
         </div>
@@ -164,63 +148,63 @@
                 <div class="doctors-grid">
                     <div class="doctor-card">
                         <div class="doctor-image">
-                            <img id="team-member-1-photo" src="" alt="" class="team-member-photo" style="display: none;">
+                            <img id="team-member-1-photo" src="../adminaboutus/" alt="" class="team-member-photo" style="display: none;">
                             <div class="doctor-placeholder" id="team-member-1-placeholder">
                                 <i class="fa-solid fa-user-doctor"></i>
                             </div>
                         </div>
-                        <h3 id="team-member-1-name">Eli Nawa</h3>
+                        <h3 id="team-member-1-name">Anika Benetua</h3>
                         <p id="team-member-1-role">Developer</p>
                     </div>
                     <div class="doctor-card">
                         <div class="doctor-image">
-                            <img id="team-member-2-photo" src="" alt="" class="team-member-photo" style="display: none;">
+                            <img id="team-member-2-photo" src="../adminaboutus/chan.png" alt="" class="team-member-photo" style="display: none;">
                             <div class="doctor-placeholder" id="team-member-2-placeholder">
                                 <i class="fa-solid fa-user-doctor"></i>
                             </div>
                         </div>
-                        <h3 id="team-member-2-name">Alab View</h3>
+                        <h3 id="team-member-2-name">Christian Tagasa</h3>
                         <p id="team-member-2-role">Designer</p>
                     </div>
                     <div class="doctor-card">
                         <div class="doctor-image">
-                            <img id="team-member-3-photo" src="" alt="" class="team-member-photo" style="display: none;">
+                            <img id="team-member-3-photo" src="../adminaboutus/belle.jpg" alt="" class="team-member-photo" style="display: none;">
                             <div class="doctor-placeholder" id="team-member-3-placeholder">
                                 <i class="fa-solid fa-user-doctor"></i>
                             </div>
                         </div>
-                        <h3 id="team-member-3-name">Mia Mats</h3>
+                        <h3 id="team-member-3-name">LaBelle Sapanghila</h3>
                         <p id="team-member-3-role">Project Manager</p>
                     </div>
                     <!-- Hidden team members (4-6) -->
                     <div class="doctor-card" style="display: none;">
                         <div class="doctor-image">
-                            <img id="team-member-4-photo" src="" alt="" class="team-member-photo" style="display: none;">
+                            <img id="team-member-4-photo" src="../adminaboutus/raf.jpg" alt="" class="team-member-photo" style="display: none;">
                             <div class="doctor-placeholder" id="team-member-4-placeholder">
                                 <i class="fa-solid fa-user-doctor"></i>
                             </div>
                         </div>
-                        <h3 id="team-member-4-name">John Doe</h3>
+                        <h3 id="team-member-4-name">Raffy Ajero</h3>
                         <p id="team-member-4-role">Developer</p>
                     </div>
                     <div class="doctor-card" style="display: none;">
                         <div class="doctor-image">
-                            <img id="team-member-5-photo" src="" alt="" class="team-member-photo" style="display: none;">
+                            <img id="team-member-5-photo" src="../adminaboutus/zy.png" alt="" class="team-member-photo" style="display: none;">
                             <div class="doctor-placeholder" id="team-member-5-placeholder">
                                 <i class="fa-solid fa-user-doctor"></i>
                             </div>
                         </div>
-                        <h3 id="team-member-5-name">Jane Smith</h3>
+                        <h3 id="team-member-5-name">Kizzy Cortez</h3>
                         <p id="team-member-5-role">Designer</p>
                     </div>
                     <div class="doctor-card" style="display: none;">
                         <div class="doctor-image">
-                            <img id="team-member-6-photo" src="" alt="" class="team-member-photo" style="display: none;">
+                            <img id="team-member-6-photo" src="../adminaboutus/jersey.jpg" alt="" class="team-member-photo" style="display: none;">
                             <div class="doctor-placeholder" id="team-member-6-placeholder">
                                 <i class="fa-solid fa-user-doctor"></i>
                             </div>
                         </div>
-                        <h3 id="team-member-6-name">Bob Wilson</h3>
+                        <h3 id="team-member-6-name">Jersey Raval</h3>
                         <p id="team-member-6-role">Developer</p>
                     </div>
                 </div>
