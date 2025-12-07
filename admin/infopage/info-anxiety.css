@@ -322,3 +322,9 @@ margin-left: 80px;
         height: 85%;
     }
 }
+.inner-boxes a {
+    text-decoration: none;  /* remove underline */
+    color: inherit;         /* keep original text color */
+    display: flex;          /* maintain flex behavior */
+    flex: 1;                /* same width as original .inner-box */
+}

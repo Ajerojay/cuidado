@@ -323,3 +323,9 @@ margin-left: 80px;
         height: 85%;
     }
 }
+.inner-boxes a {
+    text-decoration: none;
+    color: inherit;
+    display: block;     /* makes the <a> wrap the whole box without breaking layout */
+    flex: 1;            /* keep same width as before */
+}
