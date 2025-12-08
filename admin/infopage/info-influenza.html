@@ -61,7 +61,6 @@
     </main>
 
     <div class="body">
-
                 <div class="title">
                     <img src="influenza.png" alt="acne">
                     <div class="title-header">
@@ -181,6 +180,7 @@
                         <p>This tool provides general health information. 
                             For serious symptoms, consult a doctor.</p>
                 </div>
+    </div>
 <div id="popup-overlay">
         <div id="popup-content">
             <!-- FIXED IFRAME PATH -->
@@ -193,13 +193,10 @@
     document.querySelector(".edit-btn").addEventListener("click", function() {
         document.getElementById("popup-overlay").style.display = "flex";
     });
-document.getElementById("back-btn").addEventListener("click", function () {
+document.getElementById("back-btn, save-btn").addEventListener("click", function () {
     // Close popup in parent page
-    window.parent.document.getElementById("popup-overlay").style.display = "none";
+    window.parent.document.getElementById("popup-overlay").style.display = "none"; 
 });
 </script> 
-
-
-            </div>
 </body>
 </html>
