@@ -23,35 +23,39 @@
         <input type="text" maxlength="1" class="code-box">
       </div>
       <p class="resend">Resend code</p>
-      <button id="confirmBtn" type="button">CONFIRM</button>
+      <button id="confirmBtn" type="button">Confirm</button>
     </div>
   </div>
   <script>
-    const boxes = document.querySelectorAll('.code-box');
-    const confirmBtn = document.getElementById('confirmBtn');
-    boxes.forEach((box, index) => {
-      box.addEventListener('input', () => {
-        box.value = box.value.replace(/[^0-9]/g, ''); 
+  const boxes = document.querySelectorAll('.code-box');
+  const confirmBtn = document.getElementById('confirmBtn');
 
-        if (box.value && index < boxes.length - 1) {
-          boxes[index + 1].focus();
-        }
-      });
-      box.addEventListener('keydown', (e) => {
-        if (e.key === "Backspace" && !box.value && index > 0) {
-          boxes[index - 1].focus();
-        }
-      });
-    });
-    confirmBtn.addEventListener('click', () => {
-      const code = Array.from(boxes).map(b => b.value).join("");
+  boxes.forEach((box, index) => {
+    box.addEventListener('input', () => {
+      box.value = box.value.replace(/[^0-9]/g, '');
 
-      if (code.length !== 6) {
-        alert('Please enter the full 6-digit code.');
-      } else {
-        alert('Code confirmed: ' + code);
+      if (box.value && index < boxes.length - 1) {
+        boxes[index + 1].focus();
       }
     });
-  </script>
+
+    box.addEventListener('keydown', (e) => {
+      if (e.key === "Backspace" && !box.value && index > 0) {
+        boxes[index - 1].focus();
+      }
+    });
+  });
+
+  confirmBtn.addEventListener('click', () => {
+    const code = Array.from(boxes).map(b => b.value).join("");
+
+    if (code.length !== 6) {
+      alert('Please enter the full 6-digit code.');
+    } else {
+      // SUCCESS → Redirect
+      window.location.href = "/user/user login/userLogin.html";
+    }
+  });
+</script>
 </body>
 </html>

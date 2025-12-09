@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUIDADO • Homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../user sidebar/sidebar.css">
+        <link rel="stylesheet" href="userprof.css">
+    <script src="../user sidebar/usersidebar.js" defer></script>
+</head>
+<body class="sidebar-demo with-sidebar">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-item" id="profileMenu">
+            <a href="#">
+                <img src="../user sidebar/user.png" alt="Profile icon">
+                <span>PROFILE</span>
+            </a>
+            <div class="submenu">
+        <a href="../history archive/archive.html">
+            <img src="../user sidebar/book.png" alt="">
+            <span class="sub">ARCHIVE</span>
+        </a>
+        <a href="../history archive/history.html">
+            <img src="../user sidebar/clock.png" alt="">
+            <span class="sub">HISTORY</span>
+        </a>
+    </div>
+           </div>
+        <div class="sidebar-item">
+            <a href="Userhomepage.html">
+                <img src="../user sidebar/HOME.png" alt="Homepage icon">
+                <span>HOMEPAGE</span>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a href="#">
+                <img src="../user sidebar/dis.png" alt="Disease icon">
+                <span>DISEASE</span>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a href="../user about us/aboutus.html">
+                <img src="../user sidebar/aboutus.png" alt="About us icon">
+                <span>ABOUT&nbsp;US</span>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a href="../user contactUs/contactUs.html">
+                <img src="../user sidebar/phone-call.png" alt="Contact us icon">
+                <span>CONTACT US</span>
+            </a>
+        </div>
+        <div class="sidebar-item logout">
+            <a href="../user login/userLogin.html">
+                <img src="../user sidebar/log out.png" alt="Logout icon">
+                <span>LOGOUT</span>
+            </a>
+        </div>
+    </aside>
+<body>
+
+    <header class="app-header">
+    <div class="header-left">
+        <img src="../user sidebar/logo.png" alt="CUIDADO logo" class="brand-logo">
+    </div>
+
+    <div class="header-search">
+        <input type="text" placeholder="Search keywords...">
+        <button aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </div>
+</header>
+
+<div class="main">
+
+
+
+    
+
+    <h1 class="profile-title"><span class="gradient-text">Profile</span></h1>
+    <hr class="divider">
+
+    <div class="profile-container">
+
+        <!-- Left: Profile picture -->
+        <div class="profile-pic-card">
+            <button class="edit-pic-btn">Edit Profile Pic</button>
+            <div class="avatar-container">
+                <div class="avatar"></div>
+            </div>
+            <p class="username">Hello World</p>
+        </div>
+
+        <!-- Right: Details -->
+        <div class="profile-details-card">
+            <h2 class="bio-title">Bio and other details</h2>
+            <div class="details-grid">
+
+                <div class="detail-box">
+                    <label>Email:</label>
+                    <input type="text" value="helloworld1234@gmail.com">
+                </div>
+
+                <div class="detail-box">
+                    <label>Gender:</label>
+                    <input type="text" value="prefer not to say">
+                </div>
+
+                <div class="detail-box full">
+                    <label>Password:</label>
+                    <div class="password-row">
+                        <input type="password" value="************">
+                        <button class="small-btn">Edit</button>
+                    </div>
+                </div>
+
+                <div class="detail-box">
+                    <label>Username:</label>
+                    <input type="text" value="Hello World">
+                </div>
+
+                <div class="detail-box">
+                    <label>D:</label>
+                    <input type="text" value="september 14, 2000">
+                </div>
+            </div>
+
+            <button class="edit-details-btn">Edit Details</button>
+        </div>
+    </div>
+
+    <!-- Archive -->
+    <div class="section-box">
+        <div class="section-header">
+            <span>Archive 📔</span>
+            <button class="see-more-btn">see more</button>
+        </div>
+        <div class="tag-list">
+            <span class="tag">Heart Attack</span>
+            <span class="tag">Migraine</span>
+            <span class="tag">Sunburn</span>
+        </div>
+    </div>
+
+    <!-- Recently Viewed -->
+    <div class="section-box">
+        <div class="section-header">
+            <span>Recently Viewed 👁️</span>
+            <button class="see-more-btn">see more</button>
+        </div>
+        <div class="tag-list">
+            <span class="tag">Sore Throat</span>
+            <span class="tag">Diarrhea</span>
+            <span class="tag">Ache</span>
+        </div>
+    </div>
+
+   
+
+</div>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll(".ad-slide");
+
+document.querySelector(".ad-next").addEventListener("click", () => {
+    changeSlide(currentSlide + 1);
+});
+
+document.querySelector(".ad-prev").addEventListener("click", () => {
+    changeSlide(currentSlide - 1);
+});
+
+function changeSlide(index) {
+    slides[currentSlide].classList.remove("active");
+    currentSlide = (index + slides.length) % slides.length;
+    slides[currentSlide].classList.add("active");
+}
+</script>
+
+</body>
+</html>

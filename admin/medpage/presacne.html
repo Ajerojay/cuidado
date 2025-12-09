@@ -9,37 +9,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../sidebar/sidebar.css">
-    <link rel="stylesheet" href="presacne.css">
+    <link rel="stylesheet" href="medpage.css">
     <script src="../sidebar/sidebar.js" defer></script>
 </head>
 <body class="with-sidebar medpage-page home-low">
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-item">
-            <a href="#">
+            <a href="../Admin profile/admin-profile.html">
                 <img src="../sidebar/user.png" alt="Profile icon">
                 <span>PROFILE</span>
             </a>
         </div>
         <div class="sidebar-item">
-            <a href="#">
+            <a href="../dashboard/dashboard.html">
                 <img src="../sidebar/HOME.png" alt="Homepage icon">
                 <span>HOMEPAGE</span>
             </a>
         </div>
         <div class="sidebar-item">
-            <a href="#">
+            <a href="../diseases/Disease-Category.html">
                 <img src="../sidebar/dis.png" alt="Disease icon">
                 <span>DISEASE</span>
             </a>
         </div>
         <div class="sidebar-item">
-            <a href="#">
+            <a href="../adminaboutus/aboutus.html">
                 <img src="../sidebar/aboutus.png" alt="About us icon">
                 <span>ABOUT&nbsp;US</span>
             </a>
         </div>
         <div class="sidebar-item logout">
-            <a href="#">
+            <a href="../login/login.css">
                 <img src="../sidebar/log out.png" alt="Logout icon">
                 <span>LOGOUT</span>
             </a>
@@ -80,7 +80,7 @@
                         </div>
                         <div class="row-content">
                             <h3>Aricept</h3>
-                            <p>refers to experiencing aches, such as body pain or other discomforts, when taking  <span class="link">Aricept (donepezil)</span> a medication for dementia.</p>
+                            <p>refers to experiencing aches, such as body pain or other discomforts, when taking  <span class="link">Aricept (donepezil)</span> a medication for <strong>dementia</strong>.</p>
                         </div>
                     </div>
 
@@ -90,7 +90,7 @@
                         </div>
                         <div class="row-content">
                             <h3>Exelon</h3>
-                            <p>Exelon blocks the enzyme acetylcholinesterase, which normally breaks down <span class="link">acetylcholine </span><span class="link">(a brain chemical needed for memory and learning).</p>
+                            <p>Exelon blocks the <strong>enzyme</strong> <strong>acetylcholinesterase</strong>, which normally breaks down <span class="link">acetylcholine </span><span class="link">(a brain chemical needed for <strong>memory</strong> and <strong>learning</strong>).</p>
                         </div>
                     </div>
 
@@ -100,7 +100,7 @@
                         </div>
                         <div class="row-content">
                             <h3>Razadyne</h3>
-                            <p>Razadyne inhibits acetylcholinesterase to increase acetylcholine levels.</p>
+                            <p>Razadyne inhibits <strong>acetylcholinesterase</strong> to increase <strong>acetylcholine</strong> levels.</p>
                         </div>
                     </div>
                 </div>
@@ -117,6 +117,26 @@
         </div>
     </div>
      </main>
+     <div id="popup-overlay">
+        <div id="popup-content">
+            <!-- FIXED IFRAME PATH -->
+            <iframe src="../adminedits/editInfo.html" id="popup-iframe"></iframe>
+        </div>
+    </div>
+
+    <!-- ============ POPUP SCRIPT ============ -->
+    <script>
+    document.querySelector(".edit-btn").addEventListener("click", function() {
+        document.getElementById("popup-overlay").style.display = "flex";
+    });
+document.getElementById("back-btn, save-btn").addEventListener("click", function () {
+    // Close popup in parent page
+    window.parent.document.getElementById("popup-overlay").style.display = "none"; 
+});
+</script> 
 </body>
 </html>
+
+
+
 

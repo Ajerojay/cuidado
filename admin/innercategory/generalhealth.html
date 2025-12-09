@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CUIDADO • Sidebar Component</title>
+    <title>CUIDADO • General Health </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -15,36 +15,37 @@
 <body class="sidebar-demo with-sidebar">
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-item">
-            <a href="#">
+            <a href="../Admin profile/admin-profile.html">
                 <img src="../sidebar/user.png" alt="Profile icon">
                 <span>PROFILE</span>
             </a>
         </div>
         <div class="sidebar-item">
-            <a href="#">
+            <a href="../dashboard/dashboard.html">
                 <img src="../sidebar/HOME.png" alt="Homepage icon">
                 <span>HOMEPAGE</span>
             </a>
         </div>
         <div class="sidebar-item">
-            <a href="#">
+            <a href="../diseases/Disease-Category.html">
                 <img src="../sidebar/dis.png" alt="Disease icon">
                 <span>DISEASE</span>
             </a>
         </div>
         <div class="sidebar-item">
-            <a href="aboutus.html">
+            <a href="../adminaboutus/aboutus.html">
                 <img src="../sidebar/aboutus.png" alt="About us icon">
                 <span>ABOUT&nbsp;US</span>
             </a>
         </div>
         <div class="sidebar-item logout">
-            <a href="#">
+            <a href="../login/login.css">
                 <img src="../sidebar/log out.png" alt="Logout icon">
                 <span>LOGOUT</span>
             </a>
         </div>
     </aside>
+
 
     <main class="preview-canvas">
         <header class="app-header">
@@ -72,34 +73,47 @@
         <div class="hearthealth-wrapper">
     
             <!-- CARD 1 -->
-            <div class="hearthealth-card">
-                <div class="hearthealth-pic-box">
-                    <img src="flu.png" alt="High Blood" class="hearthealth-pic">
-                    <p class="hearthealth-name">Influenza (flu)</p>
-                    <p class="description">A contagious viral infection affecting the respiratory system, causing fever, body aches, fatigue, and cough.</p>
-                    <button class="learn-more-btn">Learn More</button>
+                <div class="hearthealth-card">
+                    <div class="hearthealth-pic-box">
+                        <img src="flu.png" alt="Influenza" class="hearthealth-pic">
+                        <p class="hearthealth-name">Influenza (Flu)</p>
+                        <p class="description">
+                            A contagious viral infection affecting the respiratory system, causing fever, body aches, fatigue, and cough.
+                        </p>
+                        <a href="../infopage/info-influenza.html">
+                            <button class="learn-more-btn">Learn More</button>
+                        </a>
+                    </div>
                 </div>
-            </div>
-    
-            <!-- CARD 2 -->
-            <div class="hearthealth-card">
-                <div class="hearthealth-pic-box">
-                    <img src="migraine.png" alt="Low Blood" class="hearthealth-pic">
-                    <p class="hearthealth-name">Migraine</p>
-                    <p class="description"> A recurring, intense headache often accompanied by nausea or sensitivity to light and sound.</p>
-                    <button class="learn-more-btn">Learn More</button>
+
+                <!-- CARD 2 -->
+                <div class="hearthealth-card">
+                    <div class="hearthealth-pic-box">
+                        <img src="migraine.png" alt="Migraine" class="hearthealth-pic">
+                        <p class="hearthealth-name">Migraine</p>
+                        <p class="description">
+                            A recurring, intense headache often accompanied by nausea or sensitivity to light and sound.
+                        </p>
+                        <a href="#">
+                            <button class="learn-more-btn">Learn More</button>
+                        </a>
+                    </div>
                 </div>
-            </div>
-    
-            <!-- CARD 3 -->
-            <div class="hearthealth-card">
-                <div class="hearthealth-pic-box">
-                    <img src="track.png" alt="Heart Attack" class="hearthealth-pic">
-                    <p class="hearthealth-name">Urinary Track Infection</p>
-                    <p class="description">A mild infection of the urinary system causing burning sensation and frequent urination.</p>
-                    <button class="learn-more-btn">Learn More</button>
+
+                <!-- CARD 3 -->
+                <div class="hearthealth-card">
+                    <div class="hearthealth-pic-box">
+                        <img src="track.png" alt="Urinary Tract Infection" class="hearthealth-pic">
+                        <p class="hearthealth-name">Urinary Tract Infection</p>
+                        <p class="description">
+                            A mild infection of the urinary system causing burning sensation and frequent urination.
+                        </p>
+                        <a href="#">
+                            <button class="learn-more-btn">Learn More</button>
+                        </a>
+                    </div>
                 </div>
-            </div>
+
             
             <!-- ADD BUTTON FIXED AT BOTTOM RIGHT -->
             <a href="#" class="add-btn">
@@ -108,6 +122,37 @@
 
         </div>
     </section>
-    
+    <!-- Popup Overlay -->
+<div id="popup-overlay">
+    <div id="popup-content">
+        <button id="popup-close">Back</button>
+        <iframe src="../addingscick/addingsickness.html"></iframe>
+    </div>
+</div>
+ <script>
+// Open popup
+document.querySelector(".add-btn").addEventListener("click", function(e){
+    e.preventDefault();
+    document.getElementById("popup-overlay").style.display = "flex";
+
+    // Adjust iframe height to fit content
+    const iframe = document.querySelector("#popup-content iframe");
+    iframe.onload = function() {
+        try {
+            // Dynamically set height based on iframe content
+            iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+        } catch (err) {
+            // Cross-origin content may block this
+            iframe.style.height = "600px"; // fallback
+        }
+    }
+});
+
+// Close popup
+document.getElementById("popup-close").addEventListener("click", function(){
+    document.getElementById("popup-overlay").style.display = "none";
+});
+</script>   
+
 </body>
 </html>    

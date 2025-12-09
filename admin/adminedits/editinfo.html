@@ -75,4 +75,14 @@
 </div>
 
 </body>
+<script>
+function closePopup() {
+    window.parent.document.getElementById("popup-overlay").style.display = "none";
+}
+
+document.querySelector(".back-btn").addEventListener("click", closePopup);
+document.querySelector(".cancel-btn").addEventListener("click", closePopup);
+document.querySelector(".save-btn").addEventListener("click", closePopup);
+</script>
+
 </html>

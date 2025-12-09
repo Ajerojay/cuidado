@@ -55,6 +55,12 @@ color:#666666 ;
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
+.boxes a {
+    text-decoration: none;     /* remove underline */
+    color: inherit;            /* keep original text color */
+    display: block;            /* makes the <a> wrap the whole box */
+}
+
 .tag p{
         text-align: center;
     font-family:'Poppins';

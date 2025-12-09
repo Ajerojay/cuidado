@@ -15,31 +15,31 @@
 <body class="with-sidebar medpage-page home-low">
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-item">
-            <a href="#">
+            <a href="../Admin profile/admin-profile.html">
                 <img src="../sidebar/user.png" alt="Profile icon">
                 <span>PROFILE</span>
             </a>
         </div>
         <div class="sidebar-item">
-            <a href="#">
+            <a href="../dashboard/dashboard.html">
                 <img src="../sidebar/HOME.png" alt="Homepage icon">
                 <span>HOMEPAGE</span>
             </a>
         </div>
         <div class="sidebar-item">
-            <a href="#">
+            <a href="../diseases/Disease-Category.html">
                 <img src="../sidebar/dis.png" alt="Disease icon">
                 <span>DISEASE</span>
             </a>
         </div>
         <div class="sidebar-item">
-            <a href="#">
+            <a href="../adminaboutus/aboutus.html">
                 <img src="../sidebar/aboutus.png" alt="About us icon">
                 <span>ABOUT&nbsp;US</span>
             </a>
         </div>
         <div class="sidebar-item logout">
-            <a href="#">
+            <a href="../login/login.css">
                 <img src="../sidebar/log out.png" alt="Logout icon">
                 <span>LOGOUT</span>
             </a>
@@ -81,7 +81,7 @@
                         </div>
                         <div class="row-content">
                             <h3>Stay Hydrated</h3>
-                            <p>One of the most common causes of low blood pressure is dehydration. Drink an <span class="link">adequate amount of water</span> throughout the day. This helps maintain blood volume and can prevent episodes of low blood pressure.</p>
+                            <p>One of the most common causes of low <strong>blood pressure</strong> is <strong>Dehydration</strong>. Drink an <span class="link">adequate amount of water</span> throughout the day. This helps maintain <strong>blood volume</strong> and can prevent episodes of low <strong>blood pressure</strong>.</p>
                         </div>
                     </div>
 
@@ -91,7 +91,7 @@
                         </div>
                         <div class="row-content">
                             <h3>Move with Intention</h3>
-                            <p><span class="link">Compression stockings</span> or socks can improve blood flow and help prevent blood from pooling in the legs. This can lead to low blood pressure.</p>
+                            <p><span class="link">Compression stockings</span> or socks can improve <strong>blood flow</strong> and help prevent blood from pooling in the legs. This can lead to low <strong>blood pressure</strong>.</p>
                         </div>
                     </div>
 
@@ -101,7 +101,7 @@
                         </div>
                         <div class="row-content">
                             <h3>Eat Smaller, More Frequent Meals</h3>
-                            <p><span class="link">Consuming smaller, well-balanced meals</span> throughout the day can help stabilize blood pressure. Large meals can lead to a drop in blood pressure as more blood is directed to the digestive system.</p>
+                            <p><span class="link">Consuming smaller, well-balanced meals</span> throughout the day can help stabilize <strong>blood pressure</strong>. Large meals can lead to a drop in <strong>blood pressure</strong> as more blood is directed to the <strong>digestive system</strong>.</p>
                         </div>
                     </div>
                 </div>
@@ -117,9 +117,29 @@
             </button>
         </div>
     </div>
+<div id="popup-overlay">
+        <div id="popup-content">
+            <!-- FIXED IFRAME PATH -->
+            <iframe src="../adminedits/editInfo.html" id="popup-iframe"></iframe>
+        </div>
+    </div>
 
+    <!-- ============ POPUP SCRIPT ============ -->
+    <script>
+    document.querySelector(".edit-btn").addEventListener("click", function() {
+        document.getElementById("popup-overlay").style.display = "flex";
+    });
+document.getElementById("back-btn, save-btn").addEventListener("click", function () {
+    // Close popup in parent page
+    window.parent.document.getElementById("popup-overlay").style.display = "none"; 
+});
+</script> 
 </body>
 </html>
+
+
+
+
 
 
 

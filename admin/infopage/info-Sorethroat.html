@@ -15,36 +15,37 @@
 <body class="with-sidebar medpage-page herb-low">
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-item">
-            <a href="#">
+            <a href="../Admin profile/admin-profile.html">
                 <img src="../sidebar/user.png" alt="Profile icon">
                 <span>PROFILE</span>
             </a>
         </div>
         <div class="sidebar-item">
-            <a href="#">
+            <a href="../dashboard/dashboard.html">
                 <img src="../sidebar/HOME.png" alt="Homepage icon">
                 <span>HOMEPAGE</span>
             </a>
         </div>
         <div class="sidebar-item">
-            <a href="#">
+            <a href="../diseases/Disease-Category.html">
                 <img src="../sidebar/dis.png" alt="Disease icon">
                 <span>DISEASE</span>
             </a>
         </div>
         <div class="sidebar-item">
-            <a href="#">
+            <a href="../adminaboutus/aboutus.html">
                 <img src="../sidebar/aboutus.png" alt="About us icon">
                 <span>ABOUT&nbsp;US</span>
             </a>
         </div>
         <div class="sidebar-item logout">
-            <a href="#">
+            <a href="../login/login.css">
                 <img src="../sidebar/log out.png" alt="Logout icon">
                 <span>LOGOUT</span>
             </a>
         </div>
     </aside>
+    
 
     <main class="preview-canvas">
         <header class="app-header">
@@ -141,23 +142,34 @@
                     </div>
 
                     <!-- RIGHT BIG BOX -->
-                    <div class="right-box">
+                <div class="right-box">
 
-                        <div class="inner-boxes">
+                    <div class="inner-boxes">
+
+                        <a href="../medpage/preSorethroat.html">
                             <div class="inner-box">
-                                <img src="1.png">
-                                <h4> Prescribed Medicine</h4></div>
+                                <img src="1.png" alt="Prescribed Medicine">
+                                <h4>Prescribed Medicine</h4>
+                            </div>
+                        </a>
+
+                        <a href="../medpage/homeSorethroat.html">
                             <div class="inner-box">
-                                <img src="3.png">
+                                <img src="3.png" alt="Home Treatment">
                                 <h4>Home Treatment</h4>
                             </div>
+                        </a>
+
+                        <a href="../medpage/herbSorethroat.html">
                             <div class="inner-box">
-                                <img src="2.png">
-                                <h4> Herbal Medicine</h4>
+                                <img src="2.png" alt="Herbal Medicine">
+                                <h4>Herbal Medicine</h4>
                             </div>
-                        </div>
+                        </a>
 
                     </div>
+
+                </div>
 
                 </div>
 
@@ -168,5 +180,23 @@
 
 
             </div>
+<div id="popup-overlay">
+        <div id="popup-content">
+            <!-- FIXED IFRAME PATH -->
+            <iframe src="../adminedits/editInfo.html" id="popup-iframe"></iframe>
+        </div>
+    </div>
+
+    <!-- ============ POPUP SCRIPT ============ -->
+    <script>
+    document.querySelector(".edit-btn").addEventListener("click", function() {
+        document.getElementById("popup-overlay").style.display = "flex";
+    });
+document.getElementById("back-btn, save-btn").addEventListener("click", function () {
+    // Close popup in parent page
+    window.parent.document.getElementById("popup-overlay").style.display = "none"; 
+});
+</script> 
+
 </body>
 </html>

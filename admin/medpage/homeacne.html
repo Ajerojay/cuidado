@@ -15,31 +15,31 @@
 <body class="with-sidebar medpage-page home-low">
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-item">
-            <a href="#">
+            <a href="../Admin profile/admin-profile.html">
                 <img src="../sidebar/user.png" alt="Profile icon">
                 <span>PROFILE</span>
             </a>
         </div>
         <div class="sidebar-item">
-            <a href="#">
+            <a href="../dashboard/dashboard.html">
                 <img src="../sidebar/HOME.png" alt="Homepage icon">
                 <span>HOMEPAGE</span>
             </a>
         </div>
         <div class="sidebar-item">
-            <a href="#">
+            <a href="../diseases/Disease-Category.html">
                 <img src="../sidebar/dis.png" alt="Disease icon">
                 <span>DISEASE</span>
             </a>
         </div>
         <div class="sidebar-item">
-            <a href="#">
+            <a href="../adminaboutus/aboutus.html">
                 <img src="../sidebar/aboutus.png" alt="About us icon">
                 <span>ABOUT&nbsp;US</span>
             </a>
         </div>
         <div class="sidebar-item logout">
-            <a href="#">
+            <a href="../login/login.css">
                 <img src="../sidebar/log out.png" alt="Logout icon">
                 <span>LOGOUT</span>
             </a>
@@ -80,7 +80,7 @@
                         </div>
                         <div class="row-content">
                             <h3>Stay Hydrated & Maintain Good Nutrition</h3>
-                            <p>Dehydration and lack of electrolytes affect nerve signaling. Drink plenty of water, and include fruits, vegetables, and whole grains to keep your nervous system functioning properly.</p>
+                            <p>Dehydration and lack of <strong>electrolytes</strong> affect <strong>nerve signaling</strong>. Drink plenty of water, and include fruits, vegetables, and whole grains to keep your <strong>nervous system</strong> functioning properly.</p>
                         </div>
                     </div>
 
@@ -90,7 +90,7 @@
                         </div>
                         <div class="row-content">
                             <h3>Reduce Stress and Get Enough Sleep</h3>
-                            <p> Chronic stress increases cortisol, which can damage brain cells and affect neurotransmitters like acetylcholine.</p>
+                            <p> <strong>Chronic stress</strong> increases <strong>cortisol</strong>, which can damage <strong>brain cells</strong> and affect <strong>neurotransmitters</strong> like <strong>acetylcholine</strong>.</p>
                         </div>
                     </div>
 
@@ -100,7 +100,7 @@
                         </div>
                         <div class="row-content">
                             <h3>Exercise Regularly</h3>
-                            <p>Light physical activity like walking, stretching, or yoga</p>
+                            <p>Light <strong>physical activity</strong> like <strong>walking</strong>, <strong>stretching</strong>, or <strong>yoga</strong></p>
                         </div>
                     </div>
                 </div>
@@ -117,8 +117,29 @@
         </div>
     </div>
   </main>
+  <div id="popup-overlay">
+        <div id="popup-content">
+            <!-- FIXED IFRAME PATH -->
+            <iframe src="../adminedits/editInfo.html" id="popup-iframe"></iframe>
+        </div>
+    </div>
+
+    <!-- ============ POPUP SCRIPT ============ -->
+    <script>
+    document.querySelector(".edit-btn").addEventListener("click", function() {
+        document.getElementById("popup-overlay").style.display = "flex";
+    });
+document.getElementById("back-btn, save-btn").addEventListener("click", function () {
+    // Close popup in parent page
+    window.parent.document.getElementById("popup-overlay").style.display = "none"; 
+});
+</script> 
 </body>
 </html>
+
+
+
+
 
 
 
