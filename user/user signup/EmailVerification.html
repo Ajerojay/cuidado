@@ -15,15 +15,17 @@
         Enter the code below to confirm your email address.
       </p>
       <div class="code-wrapper">
-        <input type="text" maxlength="1" class="code-box">
-        <input type="text" maxlength="1" class="code-box">
-        <input type="text" maxlength="1" class="code-box">
-        <input type="text" maxlength="1" class="code-box">
-        <input type="text" maxlength="1" class="code-box">
-        <input type="text" maxlength="1" class="code-box">
-      </div>
+    <input type="text" maxlength="1" class="code-box" value="2">
+    <input type="text" maxlength="1" class="code-box" value="5">
+    <input type="text" maxlength="1" class="code-box" placeholder="0">
+    <input type="text" maxlength="1" class="code-box" placeholder="0">
+    <input type="text" maxlength="1" class="code-box" placeholder="0">
+    <input type="text" maxlength="1" class="code-box" placeholder="0">
+</div>
       <p class="resend">Resend code</p>
-      <button id="confirmBtn" type="button">Confirm</button>
+      <button id="confirmBtn" type="button">
+        <a href="signup.html" style="text-decoration: none; color: white;">Confirm</a>
+      </button>
     </div>
   </div>
   <script>
@@ -44,17 +46,6 @@
         boxes[index - 1].focus();
       }
     });
-  });
-
-  confirmBtn.addEventListener('click', () => {
-    const code = Array.from(boxes).map(b => b.value).join("");
-
-    if (code.length !== 6) {
-      alert('Please enter the full 6-digit code.');
-    } else {
-      // SUCCESS → Redirect
-      window.location.href = "/user/user login/userLogin.html";
-    }
   });
 </script>
 </body>
