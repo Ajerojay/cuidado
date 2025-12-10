@@ -23,7 +23,7 @@
         <input type="text" maxlength="1" class="code-box">
       </div>
       <p class="resend">Resend code</p>
-      <a id="confirmBtn" class="confirm-btn" href="#">CONFIRM</a>
+      <a id="confirmBtn" class="confirm-btn" href="FillUp.html">CONFIRM</a>
 
     </div>
   </div>
@@ -49,7 +49,17 @@ boxes.forEach((box, index) => {
   });
 });
 
+confirmBtn.addEventListener('click', (e) => {
+  e.preventDefault(); // IMPORTANT so the page doesn’t reload
 
+  const code = Array.from(boxes).map(b => b.value).join("");
+
+  if (code.length !== 6) {
+    alert('Please enter the full 6-digit code.');
+  } else {
+    alert('Code confirmed: ' + code);
+  }
+});
 
   </script>
 
