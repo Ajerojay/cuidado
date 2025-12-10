@@ -248,7 +248,7 @@ body.sidebar-expanded .header-left {
     font-size: 16px;
     color: #333;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1200px) {s
     :root {
         --sidebar-width-collapsed: 60px;
         --sidebar-width-expanded: 200px;

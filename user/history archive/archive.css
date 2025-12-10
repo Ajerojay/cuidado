@@ -274,7 +274,7 @@ body.sidebar-expanded .header-left {
 
 }
 
-.history-container {
+.archive-container {
     margin-top: 20px;
     padding: 20px 10px;
 }
@@ -298,10 +298,10 @@ body.sidebar-expanded .header-left {
     margin-left: -50px;
 }
 
-.history-cards {
+.archive-cards {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 1px;
     flex-wrap: wrap;
     margin-top: 40px;
     margin-left: -130px;
