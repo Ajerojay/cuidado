@@ -249,9 +249,17 @@ body.sidebar-expanded .header-left {
     font-size: 16px;
     color: #333;
 }
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+body {
+    overflow-y: hidden;
+}
 
 .contact-wrapper {
     padding: 40px 60px;
+    margin-top: -30px;
 }
 
 .contact-wrapper h1 {
@@ -284,12 +292,13 @@ body.sidebar-expanded .header-left {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
 }
 .form-section {
     position: relative;
     background: #f7eaea;
     padding: 50px;
-    width: 170%;
+    width: 100%;
     border-radius: 28px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     z-index: 2;
