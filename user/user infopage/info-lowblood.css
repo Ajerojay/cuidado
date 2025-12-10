@@ -1,0 +1,583 @@
+:root {
+    --sidebar-bg: #90c1be;
+    --sidebar-text: #0f4242;
+    --header-bg: #7dbebb;
+    --teal: #00a6a6;
+    --sidebar-width-collapsed: 70px;
+    --sidebar-width-expanded: 220px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body.with-sidebar {
+    display: flex;
+    min-height: 100vh;
+    background: #ffffff;
+    padding-left: var(--sidebar-width-collapsed);
+    padding-top: 55px;
+    transition: padding-left 0.25s ease;
+}
+
+body.with-sidebar.sidebar-expanded {
+    padding-left: var(--sidebar-width-expanded);
+}
+
+body.sidebar-demo {
+    justify-content: flex-start;
+}
+
+.sidebar {
+    position: fixed;
+    width: var(--sidebar-width-collapsed);
+    background: var(--sidebar-bg);
+    box-shadow: 4px 0 15px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 55px 8px 32px;
+    gap: 22px;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 9999;
+    transition: width 0.25s ease, padding 0.25s ease;
+}
+
+.sidebar.expanded {
+    width: var(--sidebar-width-expanded);
+    align-items: flex-start;
+    padding: 48px 26px 38px;
+    gap: 5px;
+}
+
+.sidebar-item {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.sidebar-item a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--sidebar-text);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    transition: color 0.2s ease;
+    width: 100%;
+    padding: 6px 12px;
+}
+
+.sidebar-item img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.sidebar-item.logout {
+    margin-top: auto;
+}
+
+.sidebar-item span {
+    font-size: 0.65rem;
+    display: inline-flex;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease, max-height 0.2s ease, max-width 0.2s ease;
+    pointer-events: none;
+    white-space: nowrap;
+    max-height: 0;
+    max-width: 0;
+    overflow: hidden;
+}
+
+.submenu {
+    display: none;
+    flex-direction: column;
+    margin-left: 35px;
+    gap: 6px;
+}
+.sidebar-item .submenu {
+    display: none;
+}
+
+.sidebar-item.open .submenu {
+    display: flex;
+}
+
+
+.submenu a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+    text-decoration: none;
+    color: var(--sidebar-text);
+}
+
+.submenu img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+}
+
+.submenu .sub {
+    font-size: 0.70rem;
+    font-weight: 300;
+    font-style: italic;
+    opacity: 0.7;
+    letter-spacing: 0.07em;
+}
+
+.sidebar-item a:hover img {
+    transform: scale(1.05);
+}
+
+.sidebar.expanded .sidebar-item a {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 14px;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 6px;
+}
+
+.sidebar.expanded .sidebar-item span {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+    letter-spacing: 0.08em;
+    max-height: 60px;
+    max-width: 200px;
+}
+
+.sidebar:not(.expanded) .sidebar-item a {
+    justify-content: center;
+    gap: 0;
+    padding: 4px 0;
+}
+
+body.with-sidebar .preview-canvas {
+    flex: 1;
+    padding: 0;
+    min-height: 100vh;
+}
+
+body.with-sidebar .app-header {
+    background: var(--header-bg);
+    padding: 8px 34px 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 10;
+    height: auto;
+    min-height: 50px;
+}
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-transform: uppercase;
+    padding-left: calc(var(--sidebar-width-collapsed) + 20px);
+    transition: padding-left 0.25s ease;
+}
+
+body.sidebar-expanded .header-left {
+    padding-left: calc(var(--sidebar-width-expanded) + 20px);
+}
+
+.brand-logo {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+    max-height: 35px;
+}
+
+.header-search {
+    position: relative;
+    width: 300px;
+}
+
+.header-search input {
+    width: 100%;
+    padding: 10px 50px 10px 20px;
+    border-radius: 999px;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-search button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.header-search button i {
+    font-size: 16px;
+    color: #333;
+}
+@media (max-width: 1200px) {
+    :root {
+        --sidebar-width-collapsed: 60px;
+        --sidebar-width-expanded: 200px;
+    }
+
+    .sidebar {
+        padding: 30px 6px 20px;
+    }
+
+    .sidebar.expanded {
+        padding: 35px 16px 24px;
+    }
+
+    .sidebar-item span {
+        font-size: 0.6rem;
+    }
+
+    .brand-logo {
+        max-height: 30px;
+        width: 100px;
+    }
+
+}
+
+body{
+    background-color: white;
+        font-family: 'Poppins', sans-serif;
+}
+body, html, main, .preview-canvas, .body {
+    margin: 0;
+    padding: 0;
+}
+
+/*body body*/
+.body {
+    padding: 40px 40px 40px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    background-color: rgb(255, 255, 255);
+}
+.title {
+    position: relative; /* make children positionable */
+    width: 100%;
+}
+
+.title h1{
+margin-top:10px;
+color: rgb(27, 27, 27);
+font-family:'Poppins';
+    font-size: 2.8rem;
+        text-align: center;
+}
+
+.title p{
+    text-align: center;
+    font-family:'Poppins';
+font-weight: 500;
+color:#666666 ;
+
+}
+.title img{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); ;
+     opacity: 0.8;
+}
+
+.title-header {
+    position: relative;
+    display: flex;
+    justify-content: center; /* centers h1 */
+    align-items: center;
+    margin-top: 10px;
+}
+
+.title-header h1 {
+    margin: 0;
+    text-align: center;
+    flex: 0 1 auto; /* allows button to not affect centering */
+}
+
+.layer1 {
+    display: flex;
+    align-items: flex-start; /* optional: aligns them at the top */
+    gap: 20px; /* optional spacing */
+}
+
+/* Remove the big margin-right on overview */
+.overview {
+    margin-right: 0; 
+    flex: 1; /* lets it take available space */
+}
+.overview p{
+text-align: justify;
+}
+
+.prevention {
+    background: #C2E1DF; /* light yellow sticky note color */
+    padding: 20px;
+    width: 500px; /* or whatever size you prefer */
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: rotate(-2deg); /* slight tilt for sticky-note feel */
+}
+.prevention-head {
+    background: #E8F2F3; /* slightly darker shade than sticky note */
+    padding: 0px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.prevention-head h4 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+/* Optional: add a "tape" or "pin" effect */
+.prevention::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 18px;
+    background: rgba(229, 229, 229, 0.6);
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Header inside the sticky note */
+.prevention .prevention-head h4 {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.layer2 {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.symptoms, .causes {
+    flex: 1;
+    padding: 25px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    border: 1px solid #e8e8e8;
+    transition: 0.3s ease;
+}
+
+.symptoms:hover, .causes:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.symptoms h3, .causes h3 {
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.symptoms ul, .causes ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.symptoms li, .causes li {
+    margin-bottom: 6px;
+}
+.layer3 {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Left box = 1/4 width */
+.left-box {
+    flex: 1; 
+    background: #C2E1DF;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.left-box p{
+    text-align: justify;
+}
+
+.left-box h1 {
+    position: relative;
+    display: inline-block; /* so the line can be positioned relative to H1 */
+    margin-bottom: 20px;
+}
+
+/* Half-width thick line under H1 */
+.left-box h1::after {
+    content: "";
+    display: block;
+    width: 50%;           /* half the width of the H1 (or box) */
+    height: 6px;          /* thickness of the line */
+    background-color: #90C1BE; /* choose your color */
+    margin-top: 10px;     /* space below H1 */
+}
+
+/* Right box = 3/4 width */
+.right-box {
+    flex: 3; 
+    background: #E8F2F3;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Inner boxes container */
+.inner-boxes {
+    display: flex;
+    gap: 20px;               /* space between inner boxes */
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Each inner box */
+.inner-box {
+    flex: 1;
+    background: #f9f8f8;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #dcdcdc;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for inner boxes */
+.inner-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+/* Images inside inner boxes */
+.inner-box img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Headings inside inner boxes */
+.inner-box h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: #89D0D8;
+}
+
+.tag p{
+        text-align: center;
+    font-family:'Poppins';
+font-weight: 500;
+color:#666666 ;
+font-size: 11px;
+margin-top: 20px;
+margin-left: 80px;
+}
+
+#popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* POPUP BOX */
+#popup-content {
+    width: 100%;
+    max-width: 1000px;
+    height: 90%;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+}
+
+/* IFRAME INSIDE POPUP */
+#popup-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+#popup-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    overflow: hidden;
+}
+
+#popup-iframe::-webkit-scrollbar {
+    display: none;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+    #popup-content {
+        width: 95%;
+        height: 85%;
+    }
+}
+.inner-boxes a {
+    text-decoration: none;
+    color: inherit;
+    display: block;     /* makes the <a> wrap the whole box without breaking layout */
+    flex: 1;            /* keep same width as before */
+}
