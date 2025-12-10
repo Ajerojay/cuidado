@@ -301,7 +301,7 @@ body.sidebar-expanded .header-left {
 .history-cards {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 1px;
     flex-wrap: wrap;
     margin-top: 40px;
     margin-left: -130px;

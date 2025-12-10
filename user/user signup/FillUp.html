@@ -12,19 +12,21 @@
       <img src="logo (2).png" alt="CUIDADO Logo" class="logo">
 
       <form id="cuidadoForm">
-        <label>Email:</label>
+        
+        <label for="email">Email:</label>
         <input type="text" id="email" placeholder="Enter email">
 
-        <label>Birthday:</label>
-        <input type="date" id="birthday" placeholder="mm/dd/yy">
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday">
 
-        <label>Sex:</label>
-        <select>
-          <option>Female</option>
-          <option>Male</option>
+        <label for="sex">Sex:</label>
+        <select id="sex">
+          <option value="">Select sex</option>
+          <option value="Female">Female</option>
+          <option value="Male">Male</option>
         </select>
 
-        <button type="submit">SAVE</button>
+        <button type="submit">Save</button>
 
         <p id="errorMsg"></p>
       </form>
@@ -32,34 +34,64 @@
   </div>
 
   <script>
-    document.getElementById('cuidadoForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const email = document.getElementById('email').value.trim();
-      const errorMsg = document.getElementById('errorMsg');
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      if (email === "") {
-        errorMsg.textContent = "Please enter your email.";
-        errorMsg.style.color = "red";
-      } else if (!emailPattern.test(email)) {
-        errorMsg.textContent = "Please enter a valid email address.";
-        errorMsg.style.color = "red";
-      } else {
-        errorMsg.textContent = "Email saved successfully!";
-        errorMsg.style.color = "green";
-      }
-    });
-
+    const form = document.getElementById('cuidadoForm');
+    const emailInput = document.getElementById('email');
     const birthdayInput = document.getElementById('birthday');
+    const sexInput = document.getElementById('sex');
+    const errorMsg = document.getElementById('errorMsg');
+
+    // Limit birthday max year
     birthdayInput.max = "2025-12-31";
 
-    birthdayInput.addEventListener('change', function() {
-      if (this.value > "2025-12-31") {
-        alert("Please select a birthday from 2025 or earlier.");
-        this.value = "";
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      errorMsg.textContent = "";
+
+      const email = emailInput.value.trim();
+      const birthday = birthdayInput.value;
+      const sex = sexInput.value;
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      // Email validation
+      if (email === "") {
+        showError("Please enter your email.");
+        return;
       }
+      if (!emailPattern.test(email)) {
+        showError("Please enter a valid email address.");
+        return;
+      }
+
+      // Birthday validation
+      if (birthday === "") {
+        showError("Please select your birthday.");
+        return;
+      }
+      if (birthday > "2025-12-31") {
+        showError("Please select a birthday from 2025 or earlier.");
+        return;
+      }
+
+      // Sex validation
+      if (sex === "") {
+        showError("Please select your sex.");
+        return;
+      }
+
+      // Success = redirect
+      errorMsg.style.color = "green";
+      errorMsg.textContent = "Saved successfully! Redirecting...";
+
+      setTimeout(() => {
+        window.location.href = "EmailVerification.html";
+      }, 800);
+
     });
+
+    function showError(message) {
+      errorMsg.textContent = message;
+      errorMsg.style.color = "red";
+    }
   </script>
 </body>
 </html>

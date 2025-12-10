@@ -14,13 +14,48 @@
         <img src="logo (2).png" class="logo-img" alt="CUIDADO Logo">
 
         <h2>Reset Password</h2>
+
         <label>New Password:</label>
-        <input type="password" placeholder="Enter your new password" required>
-        
+        <input id="newPass" type="password" placeholder="Enter your new password">
+
         <label>Confirm Password:</label>
-        <input type="password" placeholder="Confirm your new password" required>
-        <button>CONFIRM</button>
+        <input id="confirmPass" type="password" placeholder="Confirm your new password">
+
+        <p id="errorMsg" style="color:red; font-size:14px; margin-bottom: 15px;"></p>
+
+        <button id="confirmBtn">CONFIRM</button>
     </div>
+
+    <script>
+        const newPass = document.getElementById('newPass');
+        const confirmPass = document.getElementById('confirmPass');
+        const errorMsg = document.getElementById('errorMsg');
+        const confirmBtn = document.getElementById('confirmBtn');
+
+        confirmBtn.addEventListener('click', () => {
+            const pass1 = newPass.value.trim();
+            const pass2 = confirmPass.value.trim();
+
+            if (pass1 === "" || pass2 === "") {
+                errorMsg.textContent = "Please fill out both password fields.";
+                return;
+            }
+
+            if (pass1 !== pass2) {
+                errorMsg.textContent = "Passwords do not match.";
+                return;
+            }
+
+            // SUCCESS
+            errorMsg.style.color = "green";
+            errorMsg.textContent = "Password successfully reset!";
+
+            // Redirect (optional)
+            setTimeout(() => {
+                window.location.href = "userLogin.html";
+            }, 1000);
+        });
+    </script>
 
 </body>
 </html>
