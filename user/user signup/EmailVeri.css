@@ -82,3 +82,22 @@ button {
 button:hover {
   background-color: #0f172a;
 }
+.confirm-btn {
+  display: inline-block;
+  width: 80%;
+  background-color: #1a2238;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.confirm-btn:hover {
+  background-color: #0f172a;
+}
