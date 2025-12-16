@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Password</title>
+    <link rel="stylesheet" href="changepass.css">
+</head>
+
+<body>
+
+<div class="popup-overlay">
+    <div class="popup-box">
+        <h2>Change Password</h2>
+
+        <label>Current password:</label>
+        <input type="password" id="currentPass" placeholder="Current Password">
+
+        <label>New Password:</label>
+        <input type="password" id="newPass" placeholder="New Password">
+
+        <label>Confirm Password:</label>
+        <input type="password" id="confirmPass" placeholder="Confirm Password">
+
+        <p id="error-msg" style="color:red; font-size:14px; margin-top:8px;"></p>
+
+        <div class="btn-row">
+            <button class="cancel-btn" onclick="closePop()">CANCEL</button>
+            <button class="save-btn" onclick="validatePassword()">SAVE</button>
+        </div>
+    </div>
+</div>
+<div id="alert-overlay" class="alert-overlay">
+    <div class="alert-box">
+        <p id="alert-message"></p>
+        <button onclick="closeAlert()">OK</button>
+    </div>
+</div>
+<script>
+function showAlert(message) {
+    document.getElementById("alert-message").textContent = message;
+    document.getElementById("alert-overlay").style.display = "flex";
+}
+
+function closeAlert() {
+    document.getElementById("alert-overlay").style.display = "none";
+}
+
+function validatePassword() {
+    const newPass = document.getElementById("newPass").value;
+    const confirmPass = document.getElementById("confirmPass").value;
+
+    const strongPassword =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    if (!newPass || !confirmPass) {
+        showAlert("Please fill out all password fields.");
+        return;
+    }
+
+    if (newPass !== confirmPass) {
+        showAlert("Passwords do not match.");
+        return;
+    }
+
+    if (!strongPassword.test(newPass)) {
+        showAlert(
+            "Password must be at least 8 characters and include:\n" +
+            "• Uppercase\n• Lowercase\n• Number\n• Special character"
+        );
+        return;
+    }
+
+    showAlert("Password changed successfully!");
+
+    setTimeout(() => {
+        window.parent.postMessage("closePopup", "*");
+    }, 800);
+}
+
+function closePop() {
+    window.parent.postMessage("closePopup", "*");
+}
+</script>
+
+
+</body>
+</html>

@@ -248,7 +248,7 @@ body.sidebar-expanded .header-left {
     font-size: 16px;
     color: #333;
 }
-@media (max-width: 1200px) {s
+@media (max-width: 1200px) {
     :root {
         --sidebar-width-collapsed: 60px;
         --sidebar-width-expanded: 200px;
@@ -272,204 +272,260 @@ body.sidebar-expanded .header-left {
     }
 
 }
-.brand-logo {
-    width: 120px;
-    height: auto;
-    object-fit: contain;
-    max-height: 35px;
-}
 
-.header-search {
-    position: relative;
-    width: 300px;
+body{
+    background-color: white;
+        font-family: 'Poppins', sans-serif;
 }
-
-.header-search input {
-    width: 100%;
-    padding: 10px 50px 10px 20px;
-    border-radius: 999px;
-    border: none;
-    outline: none;
-    font-size: 0.9rem;
-    background: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.header-search button {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: none;
-    background: transparent;
-    color: #333;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+body, html, main, .preview-canvas, .body {
+    margin: 0;
     padding: 0;
 }
 
-.header-search button i {
-    font-size: 16px;
-    color: #333;
-}
-
-/* MAIN HEART HEALTH CONTAINER */
-.hearthealth-container {
-    padding: 80px 40px 40px;
-    width: 100%;
-    background-color: #fefefe;
-}
-
-.hearthealth-title {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 30px;
-    color: #0f4242;
+/*body body*/
+.body {
+    padding: 40px 40px 40px;
     position: relative;
-}
-.hearthealth-header {
+    overflow: hidden;
     display: flex;
+    flex-direction: column;
+    gap: 35px;
+    background-color: rgb(255, 255, 255);
+}
+.title {
+    position: relative; /* make children positionable */
+    width: 100%;
+}
+
+.title h1{
+margin-top:10px;
+color: rgb(27, 27, 27);
+font-family:'Poppins';
+    font-size: 2.8rem;
+        text-align: center;
+}
+
+.title p{
+    text-align: center;
+    font-family:'Poppins';
+font-weight: 500;
+color:#666666 ;
+
+}
+.title img{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); ;
+     opacity: 0.8;
+}
+
+.title-header {
+    position: relative;
+    display: flex;
+    justify-content: center; /* centers h1 */
     align-items: center;
+    margin-top: 10px;
+}
+
+.title-header h1 {
+    margin: 0;
+    text-align: center;
+    flex: 0 1 auto; /* allows button to not affect centering */
+}
+
+.layer1 {
+    display: flex;
+    align-items: flex-start; /* optional: aligns them at the top */
+    gap: 20px; /* optional spacing */
+}
+
+/* Remove the big margin-right on overview */
+.overview {
+    margin-right: 0; 
+    flex: 1; /* lets it take available space */
+}
+.overview p{
+text-align: justify;
+}
+
+.prevention {
+    background: #C2E1DF; /* light yellow sticky note color */
+    padding: 20px;
+    width: 500px; /* or whatever size you prefer */
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: rotate(-2deg); /* slight tilt for sticky-note feel */
+}
+.prevention-head {
+    background: #E8F2F3; /* slightly darker shade than sticky note */
+    padding: 0px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.prevention-head h4 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+/* Optional: add a "tape" or "pin" effect */
+.prevention::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 18px;
+    background: rgba(229, 229, 229, 0.6);
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Header inside the sticky note */
+.prevention .prevention-head h4 {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.layer2 {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.symptoms, .causes {
+    flex: 1;
+    padding: 25px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    border: 1px solid #e8e8e8;
+    transition: 0.3s ease;
+}
+
+.symptoms:hover, .causes:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.symptoms h3, .causes h3 {
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.symptoms ul, .causes ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.symptoms li, .causes li {
+    margin-bottom: 6px;
+}
+.layer3 {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Left box = 1/4 width */
+.left-box {
+    flex: 1; 
+    background: #C2E1DF;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.left-box p{
+    text-align: justify;
+}
+
+.left-box h1 {
+    position: relative;
+    display: inline-block; /* so the line can be positioned relative to H1 */
+    margin-bottom: 20px;
+}
+
+/* Half-width thick line under H1 */
+.left-box h1::after {
+    content: "";
+    display: block;
+    width: 50%;           /* half the width of the H1 (or box) */
+    height: 6px;          /* thickness of the line */
+    background-color: #90C1BE; /* choose your color */
+    margin-top: 10px;     /* space below H1 */
+}
+
+/* Right box = 3/4 width */
+.right-box {
+    flex: 3; 
+    background: #E8F2F3;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 0px;
+}
+
+/* Inner boxes container */
+.inner-boxes {
+    display: flex;
+    gap: 20px;               /* space between inner boxes */
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Each inner box */
+.inner-box {
+    flex: 1;
+    background: #f9f8f8;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #dcdcdc;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for inner boxes */
+.inner-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+/* Images inside inner boxes */
+.inner-box img {
+    max-width: 150px;
+    height: auto;
     margin-bottom: 10px;
 }
 
-.hearthealth-icon {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    margin-bottom: auto;
-}
-/* Optional: broken line under title */
-.hearthealth-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: #7dbebb;
-    margin: 8px auto 0;
-    border-radius: 2px;
+/* Headings inside inner boxes */
+.inner-box h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: #89D0D8;
 }
 
-/* MAIN WRAPPER */
-.hearthealth-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 30px;
+.tag p{
+        text-align: center;
+    font-family:'Poppins';
+font-weight: 500;
+color:#666666 ;
+font-size: 11px;
+margin-top: 20px;
+margin-left: 80px;
 }
 
-/* CARD */
-.hearthealth-card {
-    background: #F0FAFA;
-    padding: 25px;
-    width: 300px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* IMAGE AND CONTENT BOX */
-.hearthealth-pic-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* PROFILE IMAGE */
-.hearthealth-pic {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    margin-bottom: 12px;
-}
-
-/* CARD NAME */
-.hearthealth-name {
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #0f4242;
-    margin-bottom: 8px;
-}
-
-/* DESCRIPTION TEXT */
-.title-description {
-    font-size: 0.85rem;
-    color: #555;
-    margin-bottom: 15px;
-    line-height: 1.3;
-    text-align: center;
-}
-.description {
-    font-size: 0.85rem;
-    color: #555;
-    margin-bottom: 15px;
-    line-height: 1.3;
-}
-
-/* LEARN MORE BUTTON */
-.learn-more-btn {
-    padding: 5px 15px;
-    background: #457B79;
-    color: #fff;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 0.7rem;
-    transition: background 0.3s;
-}
-
-.learn-more-btn:hover {
-    background: #5aa7a3;
-}
-
-/* ADD BUTTON FIXED POSITION */
-.add-btn {
-    position: fixed;
-    bottom: 50px;
-    right: 75px;
-    background-color: #457B79;
-    color: #fff;
-    padding: 14px 22px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: background 0.3s, transform 0.2s;
-    z-index: 1000;
-}
-.add-btn:hover {
-    background-color: #3ea2a0;
-    transform: translateY(-2px);
-}
-
-
-
-/* RESPONSIVE */
-@media screen and (max-width: 1000px) {
-    .hearthealth-wrapper {
-        justify-content: center;
-        gap: 20px;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .hearthealth-wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-/* Popup styles */
 #popup-overlay {
     display: none;
     position: fixed;
@@ -483,42 +539,45 @@ body.sidebar-expanded .header-left {
     z-index: 9999;
 }
 
+/* POPUP BOX */
 #popup-content {
-    width: 90%;
-    max-width: 900px;
-    height: 80%;
+    width: 100%;
+    max-width: 1000px;
+    height: 90%;
     background: #fff;
     border-radius: 15px;
     overflow: hidden;
     position: relative;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.25);
 }
 
+/* IFRAME INSIDE POPUP */
 #popup-content iframe {
     width: 100%;
     height: 100%;
     border: none;
 }
-
-/* Close button inside popup */
-#popup-close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: #457B79;
-    color: white;
+#popup-iframe {
+    width: 100%;
+    height: 100%;
     border: none;
-    border-radius: 25px;
-    width: 70px;
-    height: 35px;
-    cursor: pointer;
-    font-size: 15px;
-    margin-top: 30px;
-    margin-right: 40px;
+    overflow: hidden;
 }
-/* Optional: make modal content responsive */
+
+#popup-iframe::-webkit-scrollbar {
+    display: none;
+}
+
+/* RESPONSIVE */
 @media screen and (max-width: 768px) {
     #popup-content {
         width: 95%;
-        padding: 10px;
+        height: 85%;
     }
+}
+.inner-boxes a {
+    text-decoration: none;
+    color: inherit;
+    display: block;     /* makes the <a> wrap the whole box without breaking layout */
+    flex: 1;            /* keep same width as before */
 }
