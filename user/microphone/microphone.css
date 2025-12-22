@@ -1,0 +1,19 @@
+.floating-img-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.floating-img-btn img {
+    width: 100px;      /* adjust size */
+    height: 100px;
+    cursor: pointer;
+    border-radius: 50%; /* optional: makes it circular */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.floating-img-btn img:hover {
+    transform: scale(1.1);
+}
