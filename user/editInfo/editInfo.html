@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information</title>
+    <link rel="stylesheet" href="editInfoo.css">
+</head>
+
+<body>
+
+    <div class="popup-overlay">
+        <div class="popup-box">
+            <h2>Personal Information</h2>
+
+            <label>Username:</label>
+            <input type="text" placeholder="Username">
+
+            <label for="birthday">Date of birth:</label>
+                  <div class="date-container">
+    <input type="date" id="birthdayInput" required>
+    <span class="calendar-icon" id="openCalendar"></span>
+          </div>
+<label for="sex">Gender:</label>
+<select id="gender" required>
+    <option value="" disabled selected>Sex</option>
+    <option value="Female">Female</option>
+    <option value="Male">Male</option>
+</select>
+
+
+
+            <div class="btn-row">
+                <button class="cancel-btn" onclick="window.parent.postMessage('closePopup','*')">CANCEL</button>
+<button class="save-btn" onclick="window.parent.postMessage('closePopup','*')">SAVE</button>
+    </div>
+<script>
+    const birthdayInput = document.getElementById("birthdayInput");
+    const calendarIcon = document.getElementById("openCalendar");
+
+    // Set max date
+    birthdayInput.max = "2025-12-31";
+
+    // Open calendar when clicking the icon
+    calendarIcon.addEventListener("click", () => {
+        birthdayInput.showPicker(); // works in Chrome/Edge/Safari
+    });
+</script>
+<script>
+function closePop() {
+    window.parent.postMessage("closePopup", "*");
+}
+</script>
+</body>
+</html>

@@ -258,7 +258,7 @@ body {
 }
 
 .contact-wrapper {
-    padding: 40px 60px;
+    padding: 20px 10px;
     margin-top: -30px;
 }
 
@@ -282,11 +282,11 @@ body {
 }
 .contact-box {
     position: relative;
-    width: 70%;
+    width: 80%;
     max-width: 1400px;
     background: #4ea6a0;
-    padding: 60px 70px;
-    margin: 40px auto;
+    padding: 40px 60px;
+    margin: 10px auto;
     border-radius: 35px;
     display: flex;
     flex-direction: row;

@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: white; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: -7%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.20);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    padding-top: 40px;
+    background-color: white;
+}
+
+.popup-box h2 {
+    margin: 0 0 30px 0;
+    font-size: 34px;
+    font-weight: bold;
+    color: #000;
+}
+
+label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 6px;
+    color: #222;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;  
+    border: none;
+    background: #8DC0BA;
+    font-size: 17px;
+    margin-bottom: 25px;
+    outline: none;
+}
+.date-container {
+    position: relative;
+    width: 100%;
+}
+
+#birthdayInput {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: #8DC0BA;
+    font-size: 17px;
+    outline: none;
+    color: black;
+}
+
+.calendar-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.calendar-icon:hover {
+    opacity: 1;
+}
+
+.btn-row {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 10px;
+}
+
+
+button {
+    padding: 14px 45px;
+    border-radius: 40px; 
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    background: #1C2F4A;
+    box-shadow: 0 5px 8px rgba(0,0,0,0.35); 
+    font-weight: bold;
+}
+select {
+    width: 50%;
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+    background: #8DC0BA;
+    font-size: 17px;
+    margin-bottom: 25px;
+    outline: none;
+    appearance: none;   
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+select {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 20px;
+}
+/* Gray placeholder-style text for date */
+#birthdayInput:invalid {
+    color: gray;
+}
+
+/* Gray text for the default "Select sex" */
+select:invalid {
+    color: gray;
+}
+
+select option[value=""] {
+    color: gray;
+}
+/* Default text (Select sex) appears gray */
+select:invalid {
+    color: gray;
+}
+
+/* Make real options (Male/Female) black */
+select option {
+    color: black;
+}
+
+/* Force placeholder option to stay gray */
+select option[value=""] {
+    color: gray;
+}

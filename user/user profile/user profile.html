@@ -114,7 +114,7 @@
                     <label>Password:</label>
                     <div class="password-row">
                         <input type="password" value="************">
-                        <button class="small-btn">Edit</button>
+                        <button class="small-btn" id="open-change-pass">Edit</button>
                     </div>
                 </div>
 
@@ -129,7 +129,7 @@
                 </div>
             </div>
 
-            <button class="edit-details-btn">Edit Details</button>
+            <button class="edit-details-btn" id="open-edit-info">Edit Details</button>
         </div>
     </div>
 
@@ -160,8 +160,15 @@
 </div>
 
 
-   
-
+<div id="popup-overlay">
+    <div id="popup-content">
+        <iframe src="../editInfo/editInfo.html" id="popup-iframe"></iframe>
+    </div>
+</div>
+<div id="popup-overlay">
+    <div id="popup-content">
+        <iframe src="../editInfo/changepass.html" id="popup-iframe"></iframe>
+    </div>
 </div>
 
 <a href="#" class="floating-img-btn">
@@ -169,6 +176,27 @@
     </a>
 
 
+<script>
+const overlay = document.getElementById("popup-overlay");
+const iframe = document.getElementById("popup-iframe");
+
+document.getElementById("open-change-pass").addEventListener("click", () => {
+    iframe.src = "../editInfo/changepass.html";
+    overlay.style.display = "flex";
+});
+
+document.getElementById("open-edit-info").addEventListener("click", () => {
+    iframe.src = "../editInfo/editInfo.html";
+    overlay.style.display = "flex";
+});
+
+window.addEventListener("message", function(event) {
+    if (event.data === "closePopup") {
+        overlay.style.display = "none";
+        iframe.src = "";
+    }
+});
+</script>
 <script>
 let currentSlide = 0;
 const slides = document.querySelectorAll(".ad-slide");
@@ -187,6 +215,5 @@ function changeSlide(index) {
     slides[currentSlide].classList.add("active");
 }
 </script>
-
 </body>
 </html>
