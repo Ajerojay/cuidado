@@ -249,17 +249,18 @@ body.sidebar-expanded .header-left {
     font-size: 16px;
     color: #333;
 }
-html, body {
-    height: 100%;
+
+body {
     overflow: hidden;
 }
-body {
-    overflow-y: hidden;
-}
 
+.preview-canvas {
+    height: calc(100vh - 55px);
+    overflow-y: auto;
+}
 .contact-wrapper {
     padding: 20px 10px;
-    margin-top: -30px;
+    margin-top: -10px;
 }
 
 .contact-wrapper h1 {
@@ -268,51 +269,63 @@ body {
     font-size: 40px;
     font-weight: 600;
     color: #006b63;
+    margin-top: 60px;
 }
 .contact-wrapper h3 {
     font-size: 22px;
-    font-weight: 600;
+    margin-left: 25px;
+    font-weight: 1000;
     color: #0a524f;
 }
 .contact-wrapper .subtext {
     font-size: 14px;
-    margin-top: 4px;
-    margin-bottom: 25px;
+    margin-left: 25px;
+    margin-top: 10px;
+    margin-bottom: 30px;
     color: #4a4a4a;
 }
 .contact-box {
     position: relative;
-    width: 80%;
-    max-width: 1400px;
+    width: 75%;
+    max-width: 1200px;
     background: #4ea6a0;
-    padding: 40px 60px;
+    padding: 25px 45px;
     margin: 10px auto;
     border-radius: 35px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
     overflow: hidden;
+    height: auto;
+    min-height: 250px
 }
 .form-section {
     position: relative;
     background: #f7eaea;
-    padding: 50px;
+    padding: 10px;
     width: 100%;
     border-radius: 28px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    z-index: 2;
+    height: auto;
+    z-index: 1;
+    flex : 1;
 }
 
 .form-section form label {
     display: block;
-    font-size: 12px;
-    margin-top: 12px;
+    width: 57%;
+    margin-left: 25px;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
 }
-
 .form-section input,
 .form-section textarea {
     width: 57%;
+    margin-left: 25px;
     padding: 10px;
     border-radius: 8px;
     border: none;
@@ -325,21 +338,13 @@ body {
     height: 120px;
     resize: none;
 }
-
-.form-section form label {
-    display: block;
-    font-size: 14px;   
-    margin: 18px 0 6px 2px;   
-    color: #333;
-    font-weight: 500;
-}
 .phone-inside {
     position: absolute;
     right: 0px;        
-    top: 50%;          
+    top: 48.6%;          
     transform: translateY(-50%) rotate(10deg);
-    width: 410px;
-    max-width: 410px;
+    width: 350px;
+    max-width: 350px;
     pointer-events: none;  
     filter: drop-shadow(0 10px 8px rgba(0,0,0,0.25));
 }
