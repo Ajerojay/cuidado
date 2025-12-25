@@ -1,0 +1,114 @@
+body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .box {
+            width: 400px;
+            padding: 20px;
+            background-color: #F0FAFA;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+            display: flex;
+            flex-direction: column;   /* stack divs vertically */
+            align-items: center;
+            gap: 20px;
+        }
+
+        .image-top img{
+                 width: 200px;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-top: 50px;
+        }
+
+
+/* Microphone container */
+.image-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Wrapper for layering */
+.mic-wrapper {
+    position: relative;
+    width: 120px;   /* wrapper slightly bigger than mic */
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Breathing circle BEHIND the mic */
+.mic-breathing-circle {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    background: rgba(61, 191, 194, 0.35);
+    border-radius: 50%;
+    animation: breathe 2.8s ease-in-out infinite;
+    z-index: 1;
+        /* center inside wrapper using flex fallback */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Mic image ON TOP */
+.mic-wrapper img {
+    width: 70px;   /* smaller, balanced size */
+    height: auto;
+    z-index: 2;
+}
+
+/* Breathing animation */
+@keyframes breathe {
+    0% {
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0.5;
+    }
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    text-align: center;  
+}
+
+.text-line-one {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.text-line-two {
+    font-size: 14px;
+    color: #555;
+}
+
+.text-line-three {
+    font-size: 13px;
+    color: #777;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
