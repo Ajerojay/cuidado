@@ -23,35 +23,21 @@
     <input type="text" maxlength="1" class="code-box" placeholder="0">
 </div>
       <p class="resend">Resend code</p>
-<<<<<<< HEAD
       <button id="confirmBtn" type="button">
-        <a href="signup.html" style="text-decoration: none; color: white;">Confirm</a>
+        <a href="../user signup/FillUp.html" style="text-decoration: none; color: white;">Confirm</a>
       </button>
-=======
-      <a id="confirmBtn" class="confirm-btn" href="FillUp.html">CONFIRM</a>
-
->>>>>>> bfe91fa2f379345c87b8fabf1d9b04f5ad46f1f5
     </div>
   </div>
 
   <script>
 
-const boxes = document.querySelectorAll('.code-box');
+const boxes = document.querySelectorAll('.code-box');A
 const confirmBtn = document.getElementById('confirmBtn');
 
 boxes.forEach((box, index) => {
   box.addEventListener('input', () => {
     box.value = box.value.replace(/[^0-9]/g, '');
 
-<<<<<<< HEAD
-    box.addEventListener('keydown', (e) => {
-      if (e.key === "Backspace" && !box.value && index > 0) {
-        boxes[index - 1].focus();
-      }
-    });
-  });
-</script>
-=======
     if (box.value && index < boxes.length - 1) {
       boxes[index + 1].focus();
     }
@@ -78,6 +64,5 @@ confirmBtn.addEventListener('click', (e) => {
 
   </script>
 
->>>>>>> bfe91fa2f379345c87b8fabf1d9b04f5ad46f1f5
 </body>
 </html>
